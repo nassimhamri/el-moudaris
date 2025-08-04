@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Moudaris – Contacter</title>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/medias/logo/favicon.png" type="image/png">
+</head>
+<body>
+<header>
+
+
+
+
+    <!-- ============================== 
+     BARRE DE NAVIGATION
+      ============================== -->
+<section id="nav-placeholder"></section>
+
+</header>
+
+
+
+  <!-- ============================== 
+   SECTION HÉRO 
+   ============================== -->
+
+  <section class="hero" id="accueil">
+
+     <div class="container">
+    <!-- éléments décoratifs animés -->
+ <img src="/medias/nuage.png" alt="nuage décoratif" class="cloud two" />
+      <img src="/medias/nuage.png" alt="nuage décoratif" class="cloud one" />
+
+    <!-- Contenu principal -->
+    <div class="container-hero">
+            <h1 class="slogan">Contact</h1>
+            <h2>Prêt(e) à étudier en Égypte <br> depuis chez toi ?</h2>
+            <p>Choisis l’un de nos numéros de contact et inscris-toi dès maintenant à nos cours en ligne !</p>
+          
+      <div class="cta-group">
+       <a href="#more" class="btn btn-light">Voir les numéros</a>
+        <a href="/pages/tarifs.html" class="btn btn-red">Page tarifs</a>
+           <img src="/medias/avionegypte.png" alt="maison décorative" class="house" />
+      </div>
+    </div>
+
+  <!-- Maison / décor bas -->
+ 
+  </div>
+  </section>
+
+
+<section id="more" class="primary-section" style="margin:70px 0">
+  <div class="container">
+    <div class="cards">
+
+        <div class="title-text2">
+      <p>Whatsapp</p>
+      <h2>Démarre une conversation</h2>
+      <small>en cliquant sur le bouton ou en scannant le code QR, correspondant à ton profil.</small>
+  </div>
+   
+      <div class="card">
+        <h2>Inscription Homme</h2>
+        
+        <img src="/medias/contacthomme.png">
+
+        <a href="https://wa.me/+21653389938" class="btn-whatsapp" target="_blank"><span class="btn-whatsapp-text">Inscription Homme</span></a>
+      </div>
+      <div class="card">
+        <h2>Inscription Femme</h2>
+ 
+        <img src="/medias/contactfemme.jpg">
+               <a href="https://wa.me/+201155234631" class="btn-whatsapp" target="_blank"><span class="btn-whatsapp-text">Inscription Femme</span></a>
+      </div>
+      <div class="card">
+        <h2>Inscription Enfant</h2>
+        
+        <img src="/medias/contactenfant.jpg">
+        <a href="https://wa.me/+33783653161" class="btn-whatsapp" target="_blank"><span class="btn-whatsapp-text">Inscription Enfant</span></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+  <style>
+  
+
+ .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  text-decoration: none;
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+.btn-whatsapp-text::before {
+  content: "";
+  display: inline-block;
+  background-size: 100%;
+  margin: 0px 10px -5px 0px;
+  width: 25px;
+  height: 25px;
+  background-image: url(/medias/icons/whatsapp.png);
+}
+
+/* ——— Media query pour mobile ——— */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+    
+  </style>
+
+ 
+<section id="footer-placeholder"></section>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
