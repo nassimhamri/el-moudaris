@@ -1,0 +1,14 @@
+# robots.txt — encodé en UTF-8, placé à https://elmoudaris.com/robots.txt
+
+User-agent: *            # S'applique à tous les robots
+Allow: /                 # On autorise le crawl de l'ensemble du site  
+
+# On bloque deux pages sensibles ou sans valeur SEO
+Disallow: /pages/mentions-legales.html
+Disallow: /pages/politique-de-confidentalite.html
+Disallow: /pages/contact.html
+Disallow: /pages/contact.htmlt
+
+
+# Déclare le(s) sitemap(s)
+Sitemap: https://elmoudaris.com/sitemap.xml
