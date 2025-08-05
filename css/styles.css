@@ -1,6 +1,7 @@
 
     :root{
       --primary: #1b91f6;
+      --second: #f3f8fb;  /* bleu clair*/
       --primarysmall:#e7f1ff;
       --cta:     #e64a19;    
       --clr-sky:#1b91f6;          
@@ -50,7 +51,12 @@
 .primary-section {padding: 1rem 1rem; margin:25px 0px}
 .container { max-width: var(--max-w); margin: 20px auto;}
 
-
+#avantage{
+  background-color: var(--second);
+}
+#temoignages {
+  background-color:  var(--second); 
+}
 
     /* ——— Bouttons ——— */
   
@@ -378,7 +384,6 @@
    ============================== */
 .intro-section {
     padding: 60px 0;
-    background-color: #f3f8fb ;
 }
 
 .intro-title {
@@ -389,12 +394,6 @@
     font-weight: normal;
 }
 
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
-}
 
 .program-card {
     background: white;
@@ -796,9 +795,6 @@
 
 
 /* SECTION COURS */
-#cours {
-  background-color: #f3f8fb ; /* rose clair*/
-}
 
 .courses-banner {
   display: flex;
@@ -1673,7 +1669,7 @@ margin-top:25px;
 /* Styles pour les avantages en graphique */
 .advantages-graphic {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes fixes */
   gap: 25px;
   margin: 40px 0;
 }
@@ -1701,23 +1697,26 @@ margin-top:25px;
   justify-content: center;
   font-size: 24px;
   color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Ajoute un léger contraste */
+}
+@media (max-width: 768px) {
+  .advantages-graphic {
+    grid-template-columns: 1fr; /* 1 colonne sur petit écran */
+  }
+}
+.end-banner {
+  position: relative;          
+  width: 100%;
+  height: 500px;              
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;            
+  border-radius: 20px;
 }
 
-/* Bannière de fin */
-.end-banner {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--cta) 100%);
-  border-radius: 20px;
-  padding: 50px;
-  text-align: center;
-  color: white;
-  margin: 50px 0;
-}
-.end-banner h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-.end-banner p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 30px;
+.end-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           
+  display: block;
 }
