@@ -1,4 +1,3 @@
-
     :root{
       --primary: #1b91f6;
       --second: #f3f8fb;  /* bleu clair*/
@@ -807,7 +806,7 @@
   position: relative;
   flex: 1 1 300px;
   max-width: 350px;
-  height: 350px;
+  height: 500px;
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
@@ -1704,19 +1703,46 @@ margin-top:25px;
     grid-template-columns: 1fr; /* 1 colonne sur petit écran */
   }
 }
+
+
 .end-banner {
-  position: relative;          
+  position: relative;
   width: 100%;
-  height: 500px;              
+  height: 490px; /* par défaut */
   max-width: 1920px;
   margin: 0 auto;
-  overflow: hidden;            
+  overflow: hidden;
   border-radius: 20px;
 }
 
 .end-banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover;           
+  object-fit: cover;
+  object-position: center center;
   display: block;
 }
+
+
+/* Grand écran */
+@media (min-width: 1400px) {
+  .end-banner {
+    height: 300px;
+  }
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .end-banner {
+    height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .end-banner {
+    height: 200px;
+  }
+}
+
+
