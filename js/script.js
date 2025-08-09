@@ -19,19 +19,21 @@ function safeQuerySelectorAll(selector) {
   }
 }
 
-// ============================================
-// NAV PROJECTION - VERSION SÉCURISÉE
-// ============================================
 (function loadNavigation() {
   console.log("1. Tentative de chargement de la navigation...");
-  
-  const placeholder = safeQuerySelector('#nav-placeholder');
+
+  const placeholder = document.querySelector('#nav-placeholder');
   if (!placeholder) {
     console.log("❌ Nav placeholder non trouvé");
     return;
   }
 
-  fetch('https://nassimhamri.github.io/el-moudaris/pages/nav.html')
+  // Détecter si on est dans /pages/
+  const navPath = window.location.pathname.includes("/pages/")
+    ? "nav.html"
+    : "pages/nav.html";
+
+  fetch(navPath)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
@@ -41,8 +43,7 @@ function safeQuerySelectorAll(selector) {
     .then(html => {
       placeholder.innerHTML = html;
       console.log("✅ Navigation chargée");
-      
-      // Attendre un peu avant d'initialiser le menu
+
       setTimeout(initHamburgerMenu, 100);
     })
     .catch(err => {
@@ -53,6 +54,7 @@ function safeQuerySelectorAll(selector) {
         </nav>`;
     });
 })();
+
 
 // ============================================
 // MENU HAMBURGER - VERSION SÉCURISÉE
