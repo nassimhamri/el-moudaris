@@ -31,7 +31,7 @@ function safeQuerySelectorAll(selector) {
     return;
   }
 
-  fetch('../pages/nav.html')
+  fetch('https://nassimhamri.github.io/el-moudaris/pages/nav.html')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
@@ -521,7 +521,7 @@ function initFooter() {
     return;
   }
 
-  fetch('pages/footer.html')
+  fetch('https://nassimhamri.github.io/el-moudaris/pages/footer.html')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
