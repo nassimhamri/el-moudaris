@@ -166,7 +166,7 @@ Navigation
 /* ============================ 
 HERO
 ============================ */
-.hero{position:relative; background:url('/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
+.hero{position:relative; background:url('https://nassimhamri.github.io/el-moudaris/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
 
 /* Nuages */
 .cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
