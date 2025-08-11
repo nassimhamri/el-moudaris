@@ -29,7 +29,7 @@ function safeQuerySelectorAll(selector) {
   }
 
   // Charger la navigation avec un chemin absolu GitHub Pages
-const navPath = "https://nassimhamri.github.io/el-moudaris/nav.html";
+const navPath = "https://nassimhamri.github.io/el-moudaris/pages/nav.html";
 
 fetch(navPath)
   .then(response => {
