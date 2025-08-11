@@ -28,31 +28,30 @@ function safeQuerySelectorAll(selector) {
     return;
   }
 
-  // Détecter si on est dans /pages/
-  const navPath = window.location.pathname.includes("/pages/")
-    ? "nav.html"
-    : "pages/nav.html";
+  // Charger la navigation avec un chemin absolu GitHub Pages
+const navPath = "https://nassimhamri.github.io/el-moudaris/nav.html";
 
-  fetch(navPath)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      return response.text();
-    })
-    .then(html => {
-      placeholder.innerHTML = html;
-      console.log("✅ Navigation chargée");
+fetch(navPath)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.text();
+  })
+  .then(html => {
+    placeholder.innerHTML = html;
+    console.log("✅ Navigation chargée");
 
-      setTimeout(initHamburgerMenu, 100);
-    })
-    .catch(err => {
-      console.error('❌ Erreur chargement nav:', err);
-      placeholder.innerHTML = `
-        <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
-          <strong>Navigation temporairement indisponible</strong>
-        </nav>`;
-    });
+    setTimeout(initHamburgerMenu, 100);
+  })
+  .catch(err => {
+    console.error('❌ Erreur chargement nav:', err);
+    placeholder.innerHTML = `
+      <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
+        <strong>Navigation temporairement indisponible</strong>
+      </nav>`;
+  });
+
 })();
 
 
