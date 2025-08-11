@@ -28,30 +28,37 @@ function safeQuerySelectorAll(selector) {
     return;
   }
 
-  // Charger la navigation avec un chemin absolu GitHub Pages
-const navPath = "https://nassimhamri.github.io/el-moudaris/pages/nav.html";
+  // Détecter si on est en local ou sur GitHub Pages
+  let navPath;
+  if (window.location.hostname.includes("github.io")) {
+    // En ligne (GitHub Pages) → utiliser URL absolue
+    navPath = "https://nassimhamri.github.io/el-moudaris/pages/nav.html";
+  } else {
+    // En local → utiliser chemin relatif selon l’emplacement de la page
+    navPath = window.location.pathname.includes("/pages/")
+      ? "../pages/nav.html"
+      : "pages/nav.html";
+  }
 
-fetch(navPath)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-    return response.text();
-  })
-  .then(html => {
-    placeholder.innerHTML = html;
-    console.log("✅ Navigation chargée");
-
-    setTimeout(initHamburgerMenu, 100);
-  })
-  .catch(err => {
-    console.error('❌ Erreur chargement nav:', err);
-    placeholder.innerHTML = `
-      <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
-        <strong>Navigation temporairement indisponible</strong>
-      </nav>`;
-  });
-
+  fetch(navPath)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      placeholder.innerHTML = html;
+      console.log("✅ Navigation chargée");
+      setTimeout(initHamburgerMenu, 100);
+    })
+    .catch(err => {
+      console.error('❌ Erreur chargement nav:', err);
+      placeholder.innerHTML = `
+        <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
+          <strong>Navigation temporairement indisponible</strong>
+        </nav>`;
+    });
 })();
 
 
