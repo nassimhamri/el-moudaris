@@ -117,6 +117,86 @@ Navigation
   color: var(--dark);
 }
 
+/* Dropdown desktop */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: var(--link);
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  color: var(--link-hover);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  color: var(--dark);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown mobile */
+.mobile-dropdown {
+  width: 100%;
+}
+
+.mobile-dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.mobile-dropdown-content {
+  display: none;
+  flex-direction: column;
+}
+
+.mobile-dropdown-content a {
+  padding: 10px 25px;
+  background: var(--primary);
+  color: white;
+}
+
+.mobile-dropdown-content a:hover {
+  background: var(--link-hover);
+}
+
+.mobile-dropdown.active .mobile-dropdown-content {
+  display: flex;
+}
+
 .hamburger,
 #mobile-menu {
   display: none;
@@ -166,7 +246,7 @@ Navigation
 /* ============================ 
 HERO
 ============================ */
-.hero{position:relative; background:url('https://nassimhamri.github.io/el-moudaris/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
+.hero{position:relative; background:url('/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
 
 /* Nuages */
 .cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
@@ -600,9 +680,8 @@ h3 {
 /*  BANNIÈRE DE FIN */
 .end-banner {
   position: relative;
-  width: 100%;
   height: 490px;
-  max-width: 1920px;
+  max-width: var(--max-w);
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
@@ -610,9 +689,8 @@ h3 {
 
 .end-banner img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -728,6 +806,20 @@ h3 {
 /* ==================================
   PAGE PROGRAMMES ARABE
 ================================== */
+/*  Section hero  */
+.program-image-banner {
+  max-width: var(--max-w);
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.program-image-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* Section avec gradient pour les stats */
 #avantages {
@@ -771,6 +863,9 @@ h3 {
 }
 
 /* TIMELINE D'APPRENTISSAGE */
+#apprentissage{
+  background: var(--second);
+}
 .learning-timeline {
   max-width: 800px;
   margin: 0 auto;
@@ -881,6 +976,61 @@ h3 {
   margin: 0;
 }
 
+#avantages {
+  background: #ffffff; /* fond blanc pur */
+  padding: 60px 20px;
+  text-align: center; /* pour centrer highlight-banner */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); /* petite ligne de séparation subtile en bas */
+}
+
+#avantages .highlight-banner {
+  background: var(--primary);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(27,145,246,0.25);
+  display: inline-block;
+  border-radius: 50px;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.stat {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.icon-stats {
+  font-size: 2rem;
+  background: var(--primary);
+  color: white;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+
+
 /* Animation pour les éléments au scroll */
 .fade-in-up {
   opacity: 0;
@@ -899,28 +1049,79 @@ h3 {
 .fade-in-up:nth-child(3) { transition-delay: 0.3s; }
 .fade-in-up:nth-child(4) { transition-delay: 0.4s; }
 
-/* Effet pulsation sur les CTA importants */
-.btn-red {
-  position: relative;
-  overflow: hidden;
+/*  SECTION CTA FINALE */
+
+#cta-finale {
+  background: var(--second);
+  padding: 60px 20px;
 }
 
-.btn-red::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease;
+.cta-final-card {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  color: #333;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+  text-align: center;
+  border: 1px solid #e8e8e8;
 }
 
-.btn-red:hover::after {
-  width: 300px;
-  height: 300px;
+.cta-final-card h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.cta-final-card p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.cta-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.feature-icon {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.btn-cta-final {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta-final:hover {
+  background: #0f6ec0;
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #777;
 }
 
 /* Responsive pour les nouvelles sections */
@@ -1013,3 +1214,143 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==============================
+    PAGE PROGRAMME CORAN
+================================*/
+/* --- BANNIÈRE --- */
+.coran-banner {
+  background: url('/medias/coran-ferme.jpg') center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.coran-banner .overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 10px;
+}
+.coran-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.coran-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* --- SECTIONS --- */
+.section-white {
+  background: white;
+  padding: 60px 20px;
+}
+.section-blue {
+  background: #f8fbff;
+  padding: 60px 20px;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* --- INTRO --- */
+.coran-intro .container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.coran-intro .text {
+  flex: 1;
+}
+.coran-intro .image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.coran-intro .highlight {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* --- CARTES --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.teacher img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* --- TIMELINE --- */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.timeline li {
+  margin-bottom: 20px;
+  padding-left: 25px;
+  position: relative;
+}
+.timeline li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* --- POUR QUI --- */
+.coran-forwho ul {
+  list-style: none;
+  padding: 0;
+}
+.coran-forwho li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+.coran-forwho li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* --- CTA FINAL --- */
+.coran-cta {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+.btn-primary {
+  background: white;
+  color: var(--primary);
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
