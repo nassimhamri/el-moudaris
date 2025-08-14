@@ -73,9 +73,11 @@ body {
   background-attachment: fixed; /* Image fixe au scroll */
 }
 @media (max-width: 768px) {
-  .body{
+  body {
+    background-size: contain;
     background-position: center;
-    background-size: contain; /* ou ajuster le zoom */
+    /* Couleur de fond pour les espaces vides si nécessaire */
+    background-color: #f5f5f5;
   }
 }
 /* ============================ 
