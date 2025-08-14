@@ -76,8 +76,8 @@ body {
   body {
     background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlanTelephone.png");
     background-size: cover;
-    background-position: center top;
-    background-attachment: scroll;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
 /* ============================ 
