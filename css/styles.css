@@ -74,8 +74,9 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    background-size: contain;
-    background-position: center;
+    /* L'image couvre 100% de la largeur, hauteur automatique */
+    background-size: 100% auto;
+    background-position: center top;
     /* Couleur de fond pour les espaces vides si nécessaire */
     background-color: #f5f5f5;
   }
