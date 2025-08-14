@@ -72,7 +72,12 @@ body {
   background-repeat: no-repeat; /* Pas de répétition */
   background-attachment: fixed; /* Image fixe au scroll */
 }
-
+@media (max-width: 768px) {
+  .body{
+    background-position: center;
+    background-size: contain; /* ou ajuster le zoom */
+  }
+}
 /* ============================ 
 Navigation
 ============================*/
