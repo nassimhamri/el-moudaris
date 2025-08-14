@@ -66,7 +66,7 @@ body::before {
 }
 
 body {
-  background-image: url("/medias/arrierePlan1.jpg");
+  background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlan1.jpg");
   background-size: cover;       /* L'image couvre tout l'écran */
   background-position: center;  /* Centre l'image */
   background-repeat: no-repeat; /* Pas de répétition */
@@ -296,7 +296,7 @@ Navigation
 /* ============================ 
 HERO
 ============================ */
-.hero{position:relative; background:url('/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
+.hero{position:relative; background:url('https://nassimhamri.github.io/el-moudaris/medias/bannersoleil.webp');background-color:var(--clr-sky); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
 
 /* Nuages */
 .cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
@@ -1503,7 +1503,7 @@ h3 {
 ================================*/
 /* --- BANNIÈRE --- */
 .coran-banner {
-  background: url('/medias/coran-ferme.jpg') center/cover no-repeat;
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran-ferme.jpg') center/cover no-repeat;
   height: 400px;
   display: flex;
   align-items: center;
