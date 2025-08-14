@@ -7,8 +7,8 @@
   <!-- Dans votre <head> HTML -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-<link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/styles.css">
-<link rel="icon" href="https://nassimhamri.github.io/el-moudaris/medias/logo/favicon.png" type="image/png">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" href="/medias/logo/favicon.png" type="image/png">
   
 </head>
 
@@ -25,27 +25,27 @@
    ============================== -->
 
   <section class="hero" id="accueil">
-     <div class="container">
-    <!-- éléments décoratifs animés -->
- <img src="https://nassimhamri.github.io/el-moudaris/medias/nuage.png" alt="nuage décoratif" class="cloud two" />
-      <img src="https://nassimhamri.github.io/el-moudaris/medias/nuage.png" alt="nuage décoratif" class="cloud one" />
-   
-    <!-- Contenu principal -->
-    <div class="container-hero">
-            <!-- NOUVEAU SLOGAN MODIFIÉ -->
-            <h1 class="slogan fade-in-up">Coran et arabe, l'Égypte à portée de clic.</h1>
-            <h2 class="fade-in-up">Une méthode maîtrisée, un savoir enraciné.</h2>
-          
-      <div class="cta-group fade-in-up">
-       <a href="#stats" class="btn btn-light">En savoir plus</a>
-        <a href="https://nassimhamri.github.io/el-moudaris/pages/contact.html" class="btn btn-red">Je m'inscris</a>
-      </div>
+  <div class="hero-overlay"></div> <!-- filtre sombre -->
+  
+  <!-- éléments décoratifs animés -->
+  <img src="/medias/nuage.png" alt="nuage décoratif" class="cloud two" />
+  <img src="/medias/nuage.png" alt="nuage décoratif" class="cloud one" />
+
+  <!-- Contenu principal -->
+  <div class="container-hero fade-in-up">
+    <h1 class="slogan">Coran et arabe, l'Égypte à portée de clic.</h1>
+    <h2>Une méthode maîtrisée, un savoir enraciné.</h2>
+    
+    <div class="cta-group">
+      <a href="#stats" class="btn btn-light">En savoir plus</a>
+      <a href="/pages/contact.html" class="btn btn-red">Je m'inscris</a>
     </div>
+  </div>
 
   <!-- Maison / décor bas -->
-    <img src="https://nassimhamri.github.io/el-moudaris/medias/elmoudarismerkez.png" alt="maison décorative" class="house" />
-  </div>
-  </section>
+  <img src="/medias/elmoudarismerkez.png" alt="maison décorative" class="house" />
+</section>
+
 
  <!-- ============================== 
      ICON AUTHORITY
@@ -54,17 +54,19 @@
     
 <section id="stats" class="primary-section">
   <div class="container">
-     <div class="title-text fade-in-up">
-        <div class="title-section">
-          <p class="subtitle">Elmoudaris</p>
-          <h2 class="main-title">En quelques chiffres </h2>
-        </div>
+    <div class="title-text fade-in-up">
+      <div class="title-section">
+        <p class="subtitle">Elmoudaris</p>
+        <h2 class="main-title">En quelques chiffres</h2>
       </div>
+    </div>
 
     <div class="stats-grid">
       <div class="stat fade-in-up">
-        <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/abonnes.png" alt="abonnés">
-       <span class="stat-number" data-target="4700" data-format="thousand" data-suffix="+"> 0</span>
+        <div class="icon-circle">
+          <img class="icon-stats" src="/medias/icons/abonnes.png" alt="abonnés">
+        </div>
+        <span class="stat-number" data-target="4700" data-format="thousand" data-suffix="+">0</span>
         <p class="stat-label">
           <span class="stat-label-title">Abonnés</span><br>
           <small>(qui profitent de nos contenus)</small>
@@ -72,17 +74,21 @@
       </div>
 
       <div class="stat fade-in-up">
-        <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/experience.png" alt="experience">
-        <span class="stat-number" data-target="10" data-format="thousand" data-suffix="+"> 0</span>
+        <div class="icon-circle">
+          <img class="icon-stats" src="/medias/icons/experience.png" alt="experience">
+        </div>
+        <span class="stat-number" data-target="10" data-suffix="+">0</span>
         <p class="stat-label">
-           <span class="stat-label-title">Années d'expérience</span><br>
-           <small>(dans l'enseignement aux francophones)</small>
+          <span class="stat-label-title">Années d'expérience</span><br>
+          <small>(dans l'enseignement aux francophones)</small>
         </p>
       </div>
 
       <div class="stat fade-in-up">
-        <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/eleves.png">
-        <span class="stat-number" data-target="1500" data-format="thousand" data-suffix="+"> 0</span>
+        <div class="icon-circle">
+          <img class="icon-stats" src="/medias/icons/eleves.png" alt="élèves">
+        </div>
+        <span class="stat-number" data-target="1500" data-suffix="+">0</span>
         <p class="stat-label">
           <span class="stat-label-title">Anciens étudiants</span><br>
           <small>(ayant progressé avec nous)</small>
@@ -90,60 +96,62 @@
       </div>
 
       <div class="stat fade-in-up">
-        <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/Enseignant.png">
-        <span class="stat-number" data-target="40" data-format="thousand" data-suffix="+"> 0</span>
+        <div class="icon-circle">
+          <img class="icon-stats" src="/medias/icons/Enseignant.png" alt="enseignants">
+        </div>
+        <span class="stat-number" data-target="40" data-suffix="+">0</span>
         <p class="stat-label">
           <span class="stat-label-title">Enseignants actifs</span><br>
           <small>(francophones et arabophones)</small>
         </p>
       </div>
-
     </div>
   </div>
 </section>
+
 
 <!-- ============================== 
   NOS AVANTAGES EN GRAPHIQUE
   ============================== -->
 
-<section id="avantage" class="intro-section">
-    <div class="container">
-      <div class="title-text fade-in-up">
-        <div class="title-section">
-            <p class="subtitle">Nos engagements</p>
-            <h2 class="main-title">4 raisons de choisir d'avancer avec nous:</h2>
-            <p class="title-description">Découvrez ce qui fait la différence dans notre institut et pourquoi plus de 4700 personnes nous font confiance</p>
-        </div>
+<section id="avantage" class="primary-section">
+  <div class="container">
+    <div class="title-text fade-in-up">
+      <div class="title-section">
+        <p class="subtitle">Nos engagements</p>
+        <h2 class="main-title">4 raisons de choisir d'avancer avec nous</h2>
+        <p class="title-description">Découvrez ce qui fait la différence dans notre institut et pourquoi plus de 4700 personnes nous font confiance</p>
       </div>
-
-        <div class="advantages-graphic">
-            <div class="program-card">
-                <div class="program-icon">📖</div>
-                <h3 class="program-title">Un programme unique</h3>
-                <p class="program-description">une méthodologie structurée, progressive et accessible à tous, peu importe le niveau</p>
-            </div>
-            
-            <div class="program-card">
-                <div class="program-icon">🏆</div>
-                <h3 class="program-title">On vise l'excellence</h3>
-                <p class="program-description">Une équipe engagée et des professeurs impliqués et passionnés</p>
-            </div>
-            
-            <div class="program-card">
-                <div class="program-icon">🎯</div>
-                <h3 class="program-title">Un professeur rien que pour toi</h3>
-                <p class="program-description">toute l'attention est portée sur toi, un suivi personnalisé adapté à tes capacités</p>
-            </div>
-            
-            <div class="program-card">
-                <div class="program-icon">⌚</div>
-                <h3 class="program-title">Flexibilité</h3>
-                <p class="program-description">Étudie depuis chez chez toi, à l'heure que tu veux, où que tu sois. Il suffit d'une connexion internet pour commencer à avancer</p>
-            </div>
-            
-        </div>
     </div>
-</section>  
+
+    <div class="advantages-graphic">
+      <div class="program-card fade-in-up">
+        <div class="icon-highlight">📖</div>
+        <h3 class="program-title">Un programme unique</h3>
+        <p class="program-description">Une méthodologie structurée, progressive et accessible à tous, peu importe le niveau</p>
+      </div>
+      
+      <div class="program-card fade-in-up">
+        <div class="icon-highlight">🏆</div>
+        <h3 class="program-title">On vise l'excellence</h3>
+        <p class="program-description">Une équipe engagée et des professeurs impliqués et passionnés</p>
+      </div>
+      
+      <div class="program-card fade-in-up">
+        <div class="icon-highlight">🎯</div>
+        <h3 class="program-title">Un professeur rien que pour toi</h3>
+        <p class="program-description">Toute l'attention est portée sur toi, avec un suivi personnalisé adapté à tes capacités</p>
+      </div>
+      
+      <div class="program-card fade-in-up">
+        <div class="icon-highlight">⌚</div>
+        <h3 class="program-title">Flexibilité</h3>
+        <p class="program-description">Étudie depuis chez toi, à l'heure que tu veux, où que tu sois. Il suffit d'une connexion internet pour commencer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
  <!-- ============================== 
      BANNIÈRE DES COURS
@@ -158,7 +166,7 @@
     
     <!-- NOUVELLE BANNIÈRE POUR LES COURS -->
     <div class="courses-banner">
-      <div class="course-banner-card fade-in-up" onclick="location.href='pages/programmes-arabe.html'">
+      <div class="course-banner-card fade-in-up" onclick="location.href='/pages/programmes-arabe.html'">
         <div class="card-image" style="background-image: url(medias/apprendsarabe.png);">
           <div class="card-overlay">
             <h3>🔤 Langue Arabe</h3>
@@ -168,7 +176,7 @@
         </div>
       </div>
       
-      <div class="course-banner-card fade-in-up" onclick="location.href='pages/programmes-coran.html'">
+      <div class="course-banner-card fade-in-up" onclick="location.href='/pages/programmes-coran.html'">
         <div class="card-image" style="background-image: url(medias/apprendscoran.png);">
           <div class="card-overlay">
             <h3>📖 Noble Coran</h3>
@@ -178,8 +186,8 @@
         </div>
       </div>
       
-      <div class="course-banner-card fade-in-up" onclick="location.href='pages/programmes.html'" >
-        <div class="card-image" style="background-image:url(medias/apprendsenfant.png);">
+      <div class="course-banner-card fade-in-up" onclick="location.href='/pages/programmes.html'" >
+        <div class="card-image" style="background-image: url(medias/apprendsenfant.png);">
           <div class="card-overlay">
             <h3>👶 Cursus Enfants</h3>
             <p>Formation adaptée aux plus jeunes avec une approche ludique</p>
@@ -196,100 +204,161 @@
 <!-- ============================== 
      TÉMOIGNAGES QUI DÉFILENT 
      ============================== -->
-
 <section id="temoignages" class="primary-section">
   <div class="container">
-    <div class="title-section fade-in-up">
-      <p class="subtitle green">Avis des étudiant(e)s</p>
-      <h2 class="main-title gradient-green">Ce que disent nos étudiants</h2>
+    <div class="title-text fade-in-up">
+      <p class="subtitle">Avis des étudiant(e)s</p>
+      <h2 class="main-title">Ce que disent nos étudiants</h2>
       <p class="title-description">Des témoignages authentiques qui parlent de résultats concrets obtenus avec notre méthode</p>
     </div>
 
-    <!-- Swiper container -->
     <div class="title-text fade-in-up">
       <div class="swiper testimonial-swiper">
         <div class="swiper-wrapper">
-          
-          <!-- Témoignage #1-->
+
+          <!-- Témoignage #1 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              السلام عليكم <br> Les cours sont intéressants je trouve que la méthodologie de départ est bonne on apprend bien les bases c est adapté pour ceux qui connaissent rien comme ceux qui connaissent un peu plus. <br><br> En quelques semaines je suis maintenant capable d avoir une mini conversation où je me présente et je peux poser des questions basiques comme comment tu vas ? tu es de quelle origine ? etc et je peux distinguer quelques mots si c est du singulier du pluriel et du duel. 
-            </p>
-            <div class="testimonial-meta"><small>💠 Étudiant - <span>Nathan</span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarH.avif" alt="Nathan">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Un apprentissage adapté à tous</h3>
+              <p class="testimonial-text">
+                السلام عليكم <br> Les cours sont intéressants, la méthodologie de départ est bonne. On apprend bien les bases, c’est adapté pour les débutants comme pour ceux qui connaissent un peu plus.
+              </p>
+              <div class="testimonial-footer">💠 Étudiant - Nathan</div>
+            </div>
           </div>
 
-          <!-- Témoignage #2-->
+          <!-- Témoignage #2 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              السلام عليكم ورحمة الله وبركاته أخي الحبيب <br>
-              Je voulais juste te faire un petit retour concernant les cours de langue arabe. J'ai jamais autant progressé que depuis que je me suis lancé dans ton institut al hamdoulilah ! <br><br> Les cours sont très bien faits, la méthode d'apprentissage est vraiment top on ressent que l'on progresse ! Le professeur Abu Muslim qui est très patient et qui me parle quasiment qu'en arabe et pédagogue est vraiment pour moi l'une des meilleures façons d'apprendre la langue arabe ! Qu'Allah le préserve.
-            </p>
-            <div class="testimonial-meta"><small>💠 Étudiant - <span>Dawud</span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarH.avif" alt="Dawud">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Une progression rapide et motivante</h3>
+              <p class="testimonial-text">
+                السلام عليكم ورحمة الله وبركاته أخي الحبيب <br>
+                Je voulais juste te faire un petit retour concernant les cours de langue arabe. J'ai jamais autant progressé que depuis que je me suis lancé dans ton institut al hamdoulilah !
+              </p>
+              <div class="testimonial-footer">💠 Étudiant - Dawud</div>
+            </div>
           </div>
 
-          <!-- Témoignage #3-->
+          <!-- Témoignage #3 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              Qu'Allah récompense notre chère professeure pour sa patience et la transmission de son savoir. <br><br> Qu'Allah vous récompense de nous trouver des professeurs d'une grande qualité ❤️qu'Allah accepte de nous et nous augmente notre Foi 🤲🏼.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Oum Teslim</span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Oum Teslim">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Un enseignement bienveillant</h3>
+              <p class="testimonial-text">
+                Qu'Allah récompense notre chère professeure pour sa patience et la transmission de son savoir. ❤️ Qu'Allah accepte de nous et nous augmente notre Foi 🤲🏼.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Oum Teslim</div>
+            </div>
           </div>
 
-          <!-- Témoignage #4-->
+          <!-- Témoignage #4 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              Je m'appelle Assia (11 ans) et je ne suis pas arabe. Je vis maintenant dans un pays arabe et j'avais de la peine avec le Coran. Depuis que je prends des cours avec Maïssa j'ai progressé très vite et j'ai des 20/20 aux cours de Coran à l'école. <br><br> Je prenais 2 cours par semaine, la prof m'a donné l'amour du Coran et maintenant je prends 4 cours par semaine.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Assia </span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Assia">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Une progression scolaire remarquable</h3>
+              <p class="testimonial-text">
+                Je m'appelle Assia (11 ans) et je ne suis pas arabe. Depuis que je prends des cours avec Maïssa, j'ai progressé très vite et j'ai des 20/20 aux cours de Coran à l'école.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Assia</div>
+            </div>
           </div>
 
-          <!-- Témoignage #5-->
+          <!-- Témoignage #5 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              La mou3allima est très pédagogue et prend bien le temps pour chacune de nous. Le support de tajwid est très bien expliqué, très clair et facile à comprendre. <br><br>Cette session m'a apporté un grand bien, on avance bien, j'ai pu me corriger sur certaines erreurs et améliorer ma récitation avec les règles de tajwid.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Oum Abdillah </span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Oum Abdillah">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Clarté et pédagogie</h3>
+              <p class="testimonial-text">
+                Le support de tajwid est très bien expliqué, clair et facile à comprendre. Cette session m'a aidée à corriger mes erreurs et améliorer ma récitation.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Oum Abdillah</div>
+            </div>
           </div>
 
-          <!-- Témoignage #6-->
+          <!-- Témoignage #6 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-            J'étudie avec oustadha Maïssa (égyptienne) Allah umma baarek et j'en suis très satisfaite, elle est très compétente et professionnelle. <br><br> Elle a su s'adapter à mon niveau et à mes attentes très rapidement. Enseignante qui prend le temps de corriger et de conseiller l'élève pour un meilleur apprentissage et surtout mou3alima très patiente ! 
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Oum Ismaïl </span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Oum Ismaïl">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Une enseignante compétente et patiente</h3>
+              <p class="testimonial-text">
+                Oustadha Maïssa est très compétente, professionnelle et patiente. Elle a su s'adapter à mon niveau et à mes attentes rapidement.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Oum Ismaïl</div>
+            </div>
           </div>
 
-          <!-- Témoignage #7-->
+          <!-- Témoignage #7 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-            J'ai vraiment pris plaisir à apprendre de la mou3allima, elle est très douce dans sa méthodologie, patiente et à l'écoute de chacune de nous. <br><br> Elle a su s'adapter à nos différences, évitant ainsi que nous perdions du temps sur notre rythme. Vraiment Allah umma baarek son enseignement est bénéfique.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Oum Chaïmae </span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Oum Chaïmae">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Une méthodologie douce et efficace</h3>
+              <p class="testimonial-text">
+                J'ai vraiment pris plaisir à apprendre avec la mou3allima. Elle est douce, patiente et sait s'adapter aux différences de chacune.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Oum Chaïmae</div>
+            </div>
           </div>
 
-          <!-- Témoignage #8-->
+          <!-- Témoignage #8 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              Je voulais juste te faire un petit retour. Car je suis vraiment très contente des cours pour les enfants ! Les supports sont très bien et attractifs, les moualimates sont très douces, pédagogues et patientes Allahi berek. <br><br> Ayant déjà testé les cours d'arabe et de coran pour enfants dans un autre institut l'année dernière je peux vraiment voir la différence et je ne suis vraiment pas déçue alhamduliLlah.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Oum Assiya </span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Oum Assiya">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Des cours attractifs pour enfants</h3>
+              <p class="testimonial-text">
+                Les supports sont très bien et attractifs, les moualimates sont douces et patientes. La différence avec d'autres instituts est flagrante.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Oum Assiya</div>
+            </div>
           </div>
 
-          <!-- Témoignage #9-->
+          <!-- Témoignage #9 -->
           <div class="swiper-slide testimonial-card">
-            <ul class="stars"><li>★★★★★</li></ul>
-            <p class="testimonial-text">
-              Assalamou 'alaykoum wa rahmatoullahi wa baarakatouhou, Je m'appelle Hafsa (8 ans), je suis très contente de pouvoir faire ces cours allahoumabarik. <br><br> Ma mou'alima est très gentille parce que dès fois quand je me trompe, elle corrige avec douceur ! Et el moudaris m'aide à comprendre la religion qu'Allah nous accorde tous le firdaous.
-            </p>
-            <div class="testimonial-meta"><small>🌸 Étudiante - <span>Hafsa Bint Ismaïl</span></small></div>
+            <div class="testimonial-avatar">
+              <img src="medias/avatarF.jpg" alt="Hafsa">
+            </div>
+            <div class="testimonial-content">
+              <div class="quote-open">“</div>
+              <div class="quote-close">”</div>
+              <h3 class="testimonial-title">Un apprentissage ludique et bienveillant</h3>
+              <p class="testimonial-text">
+                Je suis très contente de mes cours. Ma mou'alima est très gentille et corrige avec douceur. El Moudaris m'aide à mieux comprendre ma religion.
+              </p>
+              <div class="testimonial-footer">🌸 Étudiante - Hafsa Bint Ismaïl</div>
+            </div>
           </div>
 
         </div>
@@ -299,10 +368,10 @@
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-      
     </div>
   </div>
 </section>
+
 
 
 <!-- ============================== 
@@ -312,7 +381,7 @@
 <section class="primary-section">
   <div class="container">
     <div class="end-banner fade-in-up">
-      <img src="https://nassimhamri.github.io/el-moudaris/medias/banieres.jpg" alt="Bannière El Moudaris">
+      <img src="/medias/banieres.jpg" alt="Bannière El Moudaris">
     </div>
   </div>
 </section>
@@ -322,7 +391,7 @@
 <section id="footer-placeholder"></section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://nassimhamri.github.io/el-moudaris/js/script.js?v=123"></script>
+<script src="/js/script.js?v=123"></script>
 
 </body>
 </html>
