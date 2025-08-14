@@ -1,3 +1,4 @@
+
 console.log("=== SCRIPT DÉMARRÉ ===");
 
 // Fonction utilitaire pour sélectionner des éléments en sécurité
@@ -81,7 +82,7 @@ function initHamburgerMenu() {
     return;
   }
 
-  // Supprimer les anciens listeners pour éviter les doublons
+  // Gestion hamburger
   btn.removeEventListener('click', toggleMenu);
   btn.addEventListener('click', toggleMenu);
   
@@ -99,7 +100,20 @@ function initHamburgerMenu() {
       btn.classList.remove('open');
     }
   });
+
+  // 📌 Gestion du sous-menu mobile "Programmes"
+  const mobileDropBtn = safeQuerySelector('.mobile-dropbtn');
+  const mobileDropdown = safeQuerySelector('.mobile-dropdown');
+
+  if (mobileDropBtn && mobileDropdown) {
+    mobileDropBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileDropdown.classList.toggle('active'); // Active/désactive le sous-menu
+    });
+  }
+
 }
+
 
 // ============================================
 // ANIMATIONS FADE-IN-UP
@@ -350,35 +364,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Style CSS pour l'animation ripple
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
-
-
-// ============================================
-// SWIPER TÉMOIGNAGES
-// ============================================
 function initSwiper() {
   console.log("4. Initialisation de Swiper...");
-  
+
   const swiperContainer = safeQuerySelector('.testimonial-swiper');
   if (!swiperContainer) {
     console.log("❌ Container Swiper non trouvé");
     return;
   }
 
-  // Vérifier si Swiper est disponible
   if (typeof Swiper === 'undefined') {
     console.log("❌ Swiper library non chargée");
-    // Fallback: affichage simple en grille
     swiperContainer.style.display = 'grid';
     swiperContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
     swiperContainer.style.gap = '20px';
@@ -387,27 +383,79 @@ function initSwiper() {
 
   try {
     const swiper = new Swiper('.testimonial-swiper', {
-      slidesPerView: 1,
+      // Nombre de slides visibles simultanément
+      slidesPerView: 2,
+
+      // Espace entre les slides
       spaceBetween: 30,
+
+      // Centrer les slides
+      centeredSlides: true,
+
       loop: true,
       autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
+        delay: 6000,
+        disableOnInteraction: false
       },
+      
+      // Pagination
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
+
+      // Navigation
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+
+      // Autoplay (optionnel)
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+
+      // Responsive breakpoints
       breakpoints: {
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
+        // Mobile
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        // Tablette
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 25,
+        },
+        // Desktop
+        1024: {
+          slidesPerView: 2, // Même sur desktop, 1 seul témoignage
+          spaceBetween: 30,
+        }
+      },
+      on: {
+        init: function () {
+          // Ajout d'une classe visible aux slides actuels
+          this.slides.forEach(slide => slide.classList.add('swiper-slide-visible'));
+        },
+        slideChangeTransitionStart: function () {
+          // Enlever l'animation avant la transition
+          this.slides.forEach(slide => slide.classList.remove('swiper-slide-visible'));
+        },
+        slideChangeTransitionEnd: function () {
+          // Réafficher les slides visibles après la transition
+          this.slides.forEach((slide, index) => {
+            if (slide.classList.contains('swiper-slide-active') || 
+                slide.classList.contains('swiper-slide-next') || 
+                slide.classList.contains('swiper-slide-prev')) {
+              slide.classList.add('swiper-slide-visible');
+            }
+          });
+        }
       }
     });
-    
+
     console.log("✅ Swiper initialisé avec succès");
   } catch (error) {
     console.error("❌ Erreur initialisation Swiper:", error);
@@ -462,6 +510,31 @@ function initCounters() {
     observer.observe(statsSection);
   }
 }
+
+//============================================
+// ANNIMATION EFFET MARQUEUR
+// ===========================================
+function initMarkerAnimation() {
+  const icons = document.querySelectorAll('.icon-highlight');
+
+  if (icons.length === 0) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animate');
+        }, 200); // petit délai
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  icons.forEach(icon => observer.observe(icon));
+}
+
+// Lancer après chargement
+document.addEventListener('DOMContentLoaded', initMarkerAnimation);
 
 // ============================================
 // FAQ ACCORDION
