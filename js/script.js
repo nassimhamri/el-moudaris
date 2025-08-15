@@ -384,7 +384,7 @@ function initSwiper() {
   try {
     const swiper = new Swiper('.testimonial-swiper', {
       // Nombre de slides visibles simultanément
-      slidesPerView: 2,
+      slidesPerView: 1,
 
       // Espace entre les slides
       spaceBetween: 30,
@@ -430,7 +430,7 @@ function initSwiper() {
         },
         // Desktop
         1024: {
-          slidesPerView: 2, // Même sur desktop, 1 seul témoignage
+          slidesPerView: 1,
           spaceBetween: 30,
         }
       },
