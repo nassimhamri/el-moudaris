@@ -66,7 +66,7 @@ body::before {
 }
 
 body {
-  background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlan1.jpg");
+  background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlan.jpg");
   background-size: cover;       /* L'image couvre tout l'écran */
   background-position: center;  /* Centre l'image */
   background-repeat: no-repeat; /* Pas de répétition */
@@ -74,7 +74,7 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlanTelephone.png");
+    background-image: url("https://nassimhamri.github.io/el-moudaris/medias/arrierePlan.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -707,21 +707,25 @@ h3 {
   background-color: #e0c28f;
 }
 
-/* =======================    SECTION TEMOIGNAGES ======================= */
+/* =======================
+  SECTION TEMOIGNAGES 
+======================= */
 .testimonial-swiper {
   position: relative;
-  padding: 0 60px;
+  padding: 0 40px;
   margin: 50px 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 .testimonial-card {
   position: relative;
   background: linear-gradient(135deg, rgba(27, 145, 246, 0.08) 0%, rgba(27, 145, 246, 0.03) 100%);
   border-radius: 25px;
-  padding: 40px 30px 30px 100px; /* Plus d'espace à gauche pour l'avatar */
+  padding: 40px 30px 30px 80px; /* Plus d'espace à gauche pour l'avatar */
   box-shadow: 0 20px 40px rgba(27, 145, 246, 0.1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  min-height: 320px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -735,7 +739,7 @@ h3 {
   box-shadow: 0 30px 60px rgba(27, 145, 246, 0.15);
 }
 
-/* =======================    GUILLEMETS DEBORDANT ======================= */
+/* GUILLEMETS DEBORDANT */
 .quote-open {
   position: absolute;
   top: -15px;
@@ -780,19 +784,18 @@ h3 {
   border: 3px solid white;
 }
 
-/* =======================    CONTENU INTERIEUR (STYLE CARTE) ======================= */
+/* CONTENU INTERIEUR (STYLE CARTE) */
 .testimonial-content {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   padding: 30px 25px 25px;
-  margin-top: 0; /* Supprimé car on utilise maintenant le padding de la carte principale */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   flex-grow: 1;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
 }
 
-/* =======================    AVATAR STYLE BULLE DE DISCUSSION ======================= */
+/* AVATAR STYLE BULLE DE DISCUSSION */
 .testimonial-avatar {
   position: absolute;
   top: 50%;
@@ -806,6 +809,15 @@ h3 {
   box-shadow: 0 8px 25px rgba(27, 145, 246, 0.3);
   background: white;
   z-index: 3;
+}
+
+/* Centrage parfait des slides */
+.swiper-wrapper {
+  align-items: center;
+}
+.swiper-slide {
+  max-height: 80%; /* Largeur automatique */
+  margin: 0 auto; /* Centrage horizontal */
 }
 
 .testimonial-avatar::after {
@@ -828,7 +840,7 @@ h3 {
   object-fit: cover;
 }
 
-/* =======================    TITRE ======================= */
+/* TITRE  */
 .testimonial-title {
   margin-bottom: 15px;
   font-size: 1.2rem;
@@ -837,7 +849,7 @@ h3 {
   margin-top: 0;
 }
 
-/* =======================    TEXTE ======================= */
+/* TEXTE */
 .testimonial-text {
   color: #555;
   font-size: 0.95rem;
@@ -846,7 +858,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-/* =======================    SIGNATURE STYLE HANDWRITING ======================= */
+/* SIGNATURE STYLE HANDWRITING */
 .testimonial-footer {
   margin-top: auto;
   padding-top: 20px;
@@ -863,7 +875,7 @@ h3 {
 /* Style manuscrit personnalisé si Dancing Script n'est pas chargée */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
 
-/* =======================    ETOILES/RATING (optionnel) ======================= */
+/*  ETOILES/RATING */
 .testimonial-rating {
   display: flex;
   justify-content: center;
@@ -876,7 +888,7 @@ h3 {
   font-size: 16px;
 }
 
-/* =======================    SWIPER NAVIGATION ======================= */
+/* SWIPER NAVIGATION */
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: 50%;
@@ -908,7 +920,7 @@ h3 {
   box-shadow: 0 10px 30px rgba(27, 145, 246, 0.4);
 }
 
-/* =======================    PAGINATION ======================= */
+/* PAGINATION */
 .swiper-pagination {
   position: relative;
   margin-top: 40px;
@@ -929,64 +941,85 @@ h3 {
   transform: scale(1.2);
 }
 
-/* =======================    RESPONSIVE ======================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .testimonial-swiper {
-    padding: 0 20px;
+    padding: 0 10px; /* Très peu de padding sur mobile */
+  }
+  
+  .swiper-slide {
+    max-width: 100%;
+    padding: 0 5px; /* Petit padding interne */
   }
   
   .testimonial-card {
-    padding: 30px 20px 20px 80px;
+    padding: 30px 15px 20px 60px; /* Padding réduit sur mobile */
     min-height: 280px;
-    margin: 20px 10px;
+    margin: 20px auto;
+    width: calc(100% - 60px); /* Espace pour l'avatar */
+    max-width: none; /* Pas de limite sur mobile */
   }
   
   .testimonial-content {
-    padding: 20px 18px 18px;
+    padding: 20px 15px 15px; /* Padding réduit */
   }
   
   .quote-open, .quote-close {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
   }
   
   .quote-open {
-    left: -10px;
-    top: -10px;
+    left: -8px;
+    top: -8px;
   }
   
   .quote-close {
-    right: -10px;
-    bottom: -10px;
+    right: -8px;
+    bottom: -8px;
   }
   
   .testimonial-avatar {
-    width: 60px;
-    height: 60px;
-    left: -30px;
+    width: 50px;
+    height: 50px;
+    left: -25px;
   }
   
   .testimonial-avatar::after {
-    border-left-width: 10px;
-    border-top-width: 6px;
-    border-bottom-width: 6px;
-    right: -6px;
+    border-left-width: 8px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    right: -5px;
   }
   
   .testimonial-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .testimonial-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .testimonial-footer {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Boutons de navigation */
+  .swiper-button-prev, .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .swiper-button-prev {
+    left: 2px;
+  }
+  
+  .swiper-button-next {
+    right: 2px;
   }
 }
-
 /* ===================================
   BANNIÈRE DE FIN 
 ======================================*/
