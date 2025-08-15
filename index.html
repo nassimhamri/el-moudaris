@@ -458,16 +458,23 @@
 <!-- ============================== 
  BANNIÈRE DE FIN
  ============================== -->
-
 <section class="primary-section">
   <div class="container">
     <div class="end-banner fade-in-up">
-      <img src="https://nassimhamri.github.io/el-moudaris/medias/banieres.jpg" alt="Bannière El Moudaris">
+      <picture>
+        <!-- Image mobile -->
+        <source 
+          srcset="https://nassimhamri.github.io/el-moudaris/medias/banieres_mobile.png" 
+          media="(max-width: 768px)">
+
+        <!-- Image desktop -->
+        <img 
+          src="https://nassimhamri.github.io/el-moudaris/medias/banieres.jpg" 
+          alt="Bannière El Moudaris">
+      </picture>
     </div>
   </div>
 </section>
-
-
 
 <section id="footer-placeholder"></section>
 
