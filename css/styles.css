@@ -1143,7 +1143,7 @@ h3 {
 /*  Section hero  */
 .program-image-banner {
   max-width: var(--max-w);
-  margin: 40px auto;
+  margin: 80px auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
