@@ -2045,7 +2045,7 @@ h3 {
 /* --- CTA FINAL --- */
 .coran-cta {
   position: relative;
-  background: url('/medias/coran.jpg') center/cover no-repeat;
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran.jpg') center/cover no-repeat;
   padding: 100px 20px;
   text-align: center;
   color: white;
