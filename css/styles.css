@@ -1542,154 +1542,13 @@ h3 {
 /* ==============================
     PAGE PROGRAMME CORAN
 ================================*/
-/* --- BANNIÈRE --- */
-.coran-banner {
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran-ferme.jpg') center/cover no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.coran-banner .overlay {
-  background: rgba(0,0,0,0.5);
-  padding: 40px;
-  border-radius: 10px;
-}
-.coran-banner h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-.coran-banner p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-/* --- SECTIONS --- */
-.section-white {
-  background: white;
-  padding: 60px 20px;
-}
-.section-blue {
-  background: #f8fbff;
-  padding: 60px 20px;
-}
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* --- INTRO --- */
-.coran-intro .container {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-.coran-intro .text {
-  flex: 1;
-}
-.coran-intro .image img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-.coran-intro .highlight {
-  font-weight: bold;
-  color: var(--primary);
-}
-
-/* --- CARTES --- */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.card span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
-}
-.teacher img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* --- TIMELINE --- */
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0;
-}
-.timeline li {
-  margin-bottom: 20px;
-  padding-left: 25px;
-  position: relative;
-}
-.timeline li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-/* --- POUR QUI --- */
-.coran-forwho ul {
-  list-style: none;
-  padding: 0;
-}
-.coran-forwho li {
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
-}
-.coran-forwho li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-}
-
-/* --- CTA FINAL --- */
-.coran-cta {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
-}
-.btn-primary {
-  background: white;
-  color: var(--primary);
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-
-/* ==============================
-    PAGE PROGRAMME CORAN
-================================*/
-
 /* BANNIÈRE */
 .coran-banner {
   position: relative;
   width: 100%;
   height: 90vh; /* occupe presque tout l’écran */
   margin: 80px auto;
-  background: url('/medias/coran.jpg') center/cover no-repeat;
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2249,4 +2108,3 @@ h3 {
     padding: 12px 25px;
   }
 }
-
