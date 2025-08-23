@@ -2113,4 +2113,26 @@ h3 {
     font-size: 1rem;
     padding: 12px 25px;
   }
+
+  .connection-line,
+  .connection-dot {
+      display: none !important;
+  }
+
+  .step-content {
+        width: 300px; /* Plus large pour éviter de couper la bulle */
+        padding: 15px 20px 15px 60px; /* Garde de l'espace à gauche */
+        overflow: visible; /* Pour laisser dépasser l'icône */
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        margin-left: -50px; /* Pour que l'icône dépasse comme avant */
+    }
+
+    .step-text {
+        margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
+    }
 }
