@@ -654,3 +654,196 @@ if (document.readyState === 'loading') {
     initFooter();
   }, 100);
 }
+
+/* PROGRAMME CORAN */
+const circle = document.getElementById('mainCircle');
+const steps = document.querySelectorAll('.step-item');
+
+function drawConnections() {
+    // Supprimer les anciennes lignes si on redessine
+    document.querySelectorAll('.connection-line, .connection-dot, .circle-decoration').forEach(el => el.remove());
+
+    const circleRect = circle.getBoundingClientRect();
+    const centerX = circleRect.left + circleRect.width / 2 + window.scrollX;
+    const centerY = circleRect.top + circleRect.height / 2 + window.scrollY;
+    const radius = 180; // Rayon du cercle pointillé (correspond à ::before top: -80px, width: 360px)
+
+    // Créer les décorations autour du cercle principal
+    const decorationColors = [
+        '#00d4ff', '#4facfe', '#667eea', '#f093fb', '#ff6b9d'
+    ];
+    
+    // Ajouter des points et traits décoratifs autour du cercle
+    for (let i = 0; i < 20; i++) {
+        const angle = (i * 18) * Math.PI / 180; // 18 degrés entre chaque élément
+        const decorRadius = 110; // Rayon pour les décorations
+        
+        const decorX = centerX + decorRadius * Math.cos(angle);
+        const decorY = centerY + decorRadius * Math.sin(angle);
+        
+        if (i % 4 === 0) {
+            // Créer un point coloré
+            const decorDot = document.createElement('div');
+            decorDot.classList.add('circle-decoration');
+            decorDot.style.position = 'absolute';
+            decorDot.style.left = decorX + 'px';
+            decorDot.style.top = decorY + 'px';
+            decorDot.style.width = '8px';
+            decorDot.style.height = '8px';
+            decorDot.style.borderRadius = '50%';
+            decorDot.style.background = decorationColors[Math.floor(i / 4) % decorationColors.length];
+            decorDot.style.transform = 'translate(-50%, -50%)';
+            decorDot.style.zIndex = '8';
+            decorDot.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+            document.body.appendChild(decorDot);
+        } else {
+            // Créer un petit trait
+            const decorLine = document.createElement('div');
+            decorLine.classList.add('circle-decoration');
+            decorLine.style.position = 'absolute';
+            decorLine.style.left = decorX + 'px';
+            decorLine.style.top = decorY + 'px';
+            decorLine.style.width = '12px';
+            decorLine.style.height = '2px';
+            decorLine.style.background = decorationColors[Math.floor(i / 4) % decorationColors.length];
+            decorLine.style.transform = `translate(-50%, -50%) rotate(${angle * 180 / Math.PI + 90}deg)`;
+            decorLine.style.transformOrigin = 'center';
+            decorLine.style.zIndex = '8';
+            decorLine.style.opacity = '0.8';
+            document.body.appendChild(decorLine);
+        }
+    }
+
+    steps.forEach((step, index) => {
+        const stepRect = step.getBoundingClientRect();
+        const stepX = stepRect.left + window.scrollX;
+        const stepY = stepRect.top + stepRect.height / 2 + window.scrollY;
+
+        // Angle pour distribuer les points sur le cercle (côté droit)
+        const totalSteps = steps.length;
+        const angleSpread = 80; // Degrés total pour répartir les points
+        const startAngle = -angleSpread / 2;
+        const angle = (startAngle + (index * angleSpread / (totalSteps - 1))) * Math.PI / 180;
+
+        // Coordonnées du point sur le cercle pointillé
+        const pointX = centerX + radius * Math.cos(angle);
+        const pointY = centerY + radius * Math.sin(angle);
+
+        // Crée le point coloré
+        const dot = document.createElement('div');
+        dot.classList.add('connection-dot');
+        dot.style.position = 'absolute';
+        dot.style.left = pointX + 'px';
+        dot.style.top = pointY + 'px';
+        
+        // Couleurs reprenant celles de l'image originale
+        const colors = [
+            'linear-gradient(135deg, #00d4ff, #1e90ff)',
+            'linear-gradient(135deg, #4facfe, #00f2fe)', 
+            'linear-gradient(135deg, #667eea, #764ba2)',
+            'linear-gradient(135deg, #f093fb, #f5576c)',
+            'linear-gradient(135deg, #ff6b9d, #c44569)'
+        ];
+        dot.style.background = colors[index];
+        document.body.appendChild(dot);
+
+        // Logique différente selon la position (haut, milieu, bas)
+        if (index === 0) {
+            // Trait le plus haut : vertical vers le haut puis horizontal
+            const midY = stepY;
+            
+            // Ligne verticale du point vers le haut
+            const line1 = document.createElement('div');
+            line1.classList.add('connection-line');
+            line1.style.position = 'absolute';
+            line1.style.left = (pointX - 1) + 'px';
+            line1.style.top = Math.min(pointY, midY) + 'px';
+            line1.style.width = '2px';
+            line1.style.height = Math.abs(midY - pointY) + 'px';
+            document.body.appendChild(line1);
+
+            // Ligne horizontale vers le bloc
+            const line2 = document.createElement('div');
+            line2.classList.add('connection-line');
+            line2.style.position = 'absolute';
+            line2.style.left = pointX + 'px';
+            line2.style.top = (midY - 1) + 'px';
+            line2.style.width = (stepX - pointX) + 'px';
+            line2.style.height = '2px';
+            document.body.appendChild(line2);
+            
+        } else if (index === steps.length - 1) {
+            // Trait le plus bas : vertical vers le bas puis horizontal
+            const midY = stepY;
+            
+            // Ligne verticale du point vers le bas
+            const line1 = document.createElement('div');
+            line1.classList.add('connection-line');
+            line1.style.position = 'absolute';
+            line1.style.left = (pointX - 1) + 'px';
+            line1.style.top = Math.min(pointY, midY) + 'px';
+            line1.style.width = '2px';
+            line1.style.height = Math.abs(midY - pointY) + 'px';
+            document.body.appendChild(line1);
+
+            // Ligne horizontale vers le bloc
+            const line2 = document.createElement('div');
+            line2.classList.add('connection-line');
+            line2.style.position = 'absolute';
+            line2.style.left = pointX + 'px';
+            line2.style.top = (midY - 1) + 'px';
+            line2.style.width = (stepX - pointX) + 'px';
+            line2.style.height = '2px';
+            document.body.appendChild(line2);
+            
+        } else {
+            // Traits du milieu : horizontal puis vertical
+            const midX = stepX - 30;
+            
+            // Ligne horizontale du point du cercle vers le point intermédiaire
+            const line1 = document.createElement('div');
+            line1.classList.add('connection-line');
+            line1.style.position = 'absolute';
+            line1.style.left = Math.min(pointX, midX) + 'px';
+            line1.style.top = (pointY - 1) + 'px';
+            line1.style.width = Math.abs(midX - pointX) + 'px';
+            line1.style.height = '2px';
+            document.body.appendChild(line1);
+
+            // Ligne verticale du point intermédiaire vers le bloc
+            const line2 = document.createElement('div');
+            line2.classList.add('connection-line');
+            line2.style.position = 'absolute';
+            line2.style.left = (midX - 1) + 'px';
+            line2.style.top = Math.min(pointY, stepY) + 'px';
+            line2.style.width = '2px';
+            line2.style.height = Math.abs(stepY - pointY) + 'px';
+            document.body.appendChild(line2);
+
+            // Ligne horizontale finale du point intermédiaire vers le bloc
+            const line3 = document.createElement('div');
+            line3.classList.add('connection-line');
+            line3.style.position = 'absolute';
+            line3.style.left = midX + 'px';
+            line3.style.top = (stepY - 1) + 'px';
+            line3.style.width = (stepX - midX) + 'px';
+            line3.style.height = '2px';
+            document.body.appendChild(line3);
+        }
+    });
+}
+
+// Appel initial après chargement
+window.addEventListener('load', () => {
+    setTimeout(drawConnections, 200);
+});
+
+// Redessiner si la fenêtre change (responsive)
+window.addEventListener('resize', () => {
+    setTimeout(drawConnections, 200);
+});
+
+// Redessiner pendant le scroll pour maintenir les positions
+window.addEventListener('scroll', () => {
+    drawConnections();
+});
