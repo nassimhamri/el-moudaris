@@ -76,7 +76,7 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    background-image: url("/medias/accueil_arabe.jpg");
+    background-image: url("https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
