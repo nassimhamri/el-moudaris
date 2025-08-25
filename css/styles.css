@@ -43,8 +43,8 @@ small {color:var(--light-dark)}
 #apprentissage,
 #cta-finale,
 #avantage-Coran,
-#qui-Coran{
-  background-color: rgba(243,248,251,0.8); /* ton second en semi-transparent */
+#infographic{
+  background-color: rgba(243,248,251,0.6); /* ton second en semi-transparent */
 }
 
 /* ——— Bouttons ——— */
@@ -52,6 +52,30 @@ small {color:var(--light-dark)}
 .btn:hover{transform:translateY(-2px); opacity: 80%;}
 .btn-light{margin-top:30px; background:none; border:3px solid #fff; color:white}
 .btn-red{margin-top:30px; background:var(--cta); border:3px solid var(--cta); color:#fff}
+
+/*  ANIMATIONS  */
+.fade-in-up, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: fadeInRight 1.5s ease forwards;
+}
+.fade-in-up {
+    transform: translateY(40px);
+}
+.fade-in-left {
+    transform: translateX(-100px);
+}
+.fade-in-right {
+    transform: translateX(100px);
+}
+
+/* Quand l'animation se déclenche */
+.animate.fade-in-up,
+.animate.fade-in-left,
+.animate.fade-in-right {
+    opacity: 1;
+    transform: translate(0, 0);
+}
 
 /* ==========================
   ARRIERE PLAN FIXE
@@ -68,7 +92,7 @@ body::before {
 }
 
 body {
-  background-image: url("/medias/accueil_arabe.jpg");
+  background-image: url("https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg");
   background-size: cover;       /* L'image couvre tout l'écran */
   background-position: center;  /* Centre l'image */
   background-repeat: no-repeat; /* Pas de répétition */
@@ -1114,25 +1138,6 @@ h3 {
   color: #dddddd;
 }
 
-/*  ANIMATIONS  */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in-up.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-in-up:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-up:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-up:nth-child(3) { transition-delay: 0.3s; }
-.fade-in-up:nth-child(4) { transition-delay: 0.4s; }
-.fade-in-up:nth-child(5) { transition-delay: 0.5s; }
-
-
 /* ==================================
   PAGE PROGRAMMES ARABE
 ================================== */
@@ -1363,12 +1368,6 @@ h3 {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Délais d'animation échelonnés */
-.fade-in-up:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-up:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-up:nth-child(3) { transition-delay: 0.3s; }
-.fade-in-up:nth-child(4) { transition-delay: 0.4s; }
 
 /*  SECTION CTA FINALE */
 
@@ -1626,7 +1625,6 @@ h3 {
   padding: 80px 20px;
 }
 .section-blue {
-  background: #f8fbff;
   padding: 80px 20px;
 }
 .container {
@@ -1713,6 +1711,218 @@ h3 {
 
 .coran-intro .btn-light:hover {
   background-color: #e0c28f;
+}
+
+/* --- SECTION WHY --- */
+.coran-why {
+  text-align: center;
+}
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* SECTION POURQUOI */
+.coran-why-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.why-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.why-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.why-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+.why-image img:hover {
+  transform: scale(1.05);
+}
+.why-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.why-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.why-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-checklist li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.why-checklist li:hover {
+  transform: translateX(5px);
+}
+
+.why-checklist li span {
+  font-size: 1.5rem;
+  margin-right: 50px;
+  color: var(--primary);
+}
+
+/* PROGRAMME SUR MESURE */
+.section-subtitle {
+  max-width: 750px;
+  margin: 15px auto 40px;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Encadré final */
+.program-highlight {
+  margin-top: 40px;
+  background: linear-gradient(135deg, rgba(27,145,246,0.08), rgba(27,145,246,0.03));
+  border: 1px solid rgba(27,145,246,0.15);
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.coran-program {
+  text-align: center;
+}
+
+.program-timeline {
+  margin: 40px auto;
+  max-width: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 30px;
+}
+
+.program-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.program-step {
+  display: flex;
+  align-items: center;
+}
+
+/* Application sur les steps avec délais */
+.program-step-item {
+    opacity: 0;
+}
+
+.step-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(27, 145, 246, 0.3);
+  z-index: 2;
+}
+
+.step-content {
+  background: #fff;
+  padding: 15px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  margin-left: 30px;
+}
+
+.step-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+  margin-left: 0; /* Assure que le titre n'a pas de marge à gauche */
+}
+
+.step-content p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-left: 10px; /* Seul le paragraphe a une marge à gauche */
+}
+
+@media (max-width: 768px) {
+  .program-step {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .step-icon {
+    margin: 0 auto 12px auto;
+  }
+
+  .program-step .step-content {
+    margin: 0 !important;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .program-step .step-content h3 {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .step-content p {
+    margin-left: 10; /* Supprime la marge du paragraphe sur mobile */
+  }
 }
 
 /* --- SECTION WHY --- */
@@ -2136,3 +2346,4 @@ h3 {
         margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
     }
 }
+
