@@ -121,7 +121,7 @@ function initHamburgerMenu() {
 function initAnimations() {
   console.log("3. Initialisation des animations...");
   
-  const fadeElements = safeQuerySelectorAll('.fade-in-up');
+  const fadeElements = safeQuerySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
   console.log(`   Éléments fade-in-up trouvés: ${fadeElements.length}`);
   
   if (fadeElements.length === 0) {
@@ -139,7 +139,7 @@ function initAnimations() {
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -75px 0px'
   });
 
   fadeElements.forEach(el => observer.observe(el));
