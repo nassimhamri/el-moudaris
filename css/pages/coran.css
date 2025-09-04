@@ -1,0 +1,814 @@
+/* ==============================
+    PAGE PROGRAMME CORAN
+================================*/
+
+/* BANNIÈRE */
+.coran-banner {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* occupe presque tout l’écran */
+  margin: 80px auto;
+  background: url('/medias/coran.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.coran-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coran-banner-content {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.coran-banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.coran-banner p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.coran-banner .btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.coran-banner .btn-primary:hover {
+  background: #0d6efd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 768px) {
+  .coran-banner {
+    height: 70vh;
+    background: url('/medias/coran-ferme-mobile.jpg') center/cover no-repeat;
+  }
+
+  .coran-banner h1 {
+    font-size: 2rem;
+  }
+
+  .coran-banner p {
+    font-size: 1rem;
+  }
+
+  .coran-banner .btn-primary {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* --- SECTIONS --- */
+.section-white {
+  padding: 80px 20px;
+}
+.section-blue {
+  padding: 80px 20px;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* --- INTRO --- */
+.coran-intro .container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.coran-intro .text {
+  flex: 1;
+}
+
+.coran-intro .image {
+  flex: 1;
+  text-align: center;
+}
+
+.coran-intro .image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.coran-intro .image img:hover {
+  transform: scale(1.05);
+}
+
+.coran-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.coran-intro h2 span {
+  color: var(--primary);
+}
+
+.coran-intro .benefits {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.coran-intro .benefits li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coran-intro .highlight {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 20px;
+}
+
+.coran-intro .btn-light {
+  align-self: flex-start;
+  background-color: #f5d7aa;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-shadow: none;
+}
+
+.coran-intro .btn-light:hover {
+  background-color: #e0c28f;
+}
+
+/* --- SECTION WHY --- */
+.coran-why {
+  text-align: center;
+}
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* SECTION POURQUOI */
+.coran-why-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.why-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.why-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.why-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+.why-image img:hover {
+  transform: scale(1.05);
+}
+.why-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.why-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.why-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-checklist li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.why-checklist li:hover {
+  transform: translateX(5px);
+}
+
+.why-checklist li span {
+  font-size: 1.5rem;
+  margin-right: 50px;
+  color: var(--primary);
+}
+
+/* PROGRAMME SUR MESURE */
+.section-subtitle {
+  max-width: 750px;
+  margin: 15px auto 40px;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Encadré final */
+.program-highlight {
+  margin-top: 40px;
+  background: linear-gradient(135deg, rgba(27,145,246,0.08), rgba(27,145,246,0.03));
+  border: 1px solid rgba(27,145,246,0.15);
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.coran-program {
+  text-align: center;
+}
+
+.program-timeline {
+  margin: 40px auto;
+  max-width: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 30px;
+}
+
+.program-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.program-step {
+  display: flex;
+  align-items: center;
+}
+
+/* Application sur les steps avec délais */
+.program-step-item {
+    opacity: 0;
+}
+
+.step-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(27, 145, 246, 0.3);
+  z-index: 2;
+}
+
+.step-content {
+  background: #fff;
+  padding: 15px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  margin-left: 30px;
+}
+
+.step-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+  margin-left: 0; /* Assure que le titre n'a pas de marge à gauche */
+}
+
+.step-content p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-left: 10px; /* Seul le paragraphe a une marge à gauche */
+}
+
+
+@media (max-width: 768px) {
+  .program-step {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .step-icon {
+    margin: 0 auto 12px auto;
+  }
+
+  .program-step .step-content {
+    margin: 0 !important;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .program-step .step-content h3 {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .step-content p {
+    margin-left: 10; /* Supprime la marge du paragraphe sur mobile */
+  }
+}
+
+/* --- SECTION WHY --- */
+.coran-forwho {
+    max-width: var(--max-w);
+    margin: 50 auto;
+    display: flex;
+    justify-content: center; /* Centre le contenu */
+}
+
+.infographic-container {
+    display: flex;
+    align-items: center;
+    gap: 150px; /* tu peux réduire si besoin */
+    justify-content: center; /* Centre le cercle + steps ensemble */
+}
+
+.infographic-container {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    position: relative;
+    max-width: var(--max-w);
+    margin: 20 auto;
+}
+
+/* Cercle principal */
+.center-circle {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    border: 2px solid #e1e8ed;
+}
+
+/* Décorations internes du cercle */
+.center-circle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 30% 20%, #00d4ff 2px, transparent 2px),
+        radial-gradient(circle at 70% 25%, #4facfe 2px, transparent 2px),
+        radial-gradient(circle at 20% 60%, #667eea 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, #f093fb 2px, transparent 2px),
+        radial-gradient(circle at 50% 80%, #ff6b9d 2px, transparent 2px),
+        linear-gradient(45deg, transparent 35%, #00d4ff 35%, #00d4ff 37%, transparent 37%),
+        linear-gradient(-45deg, transparent 60%, #4facfe 60%, #4facfe 62%, transparent 62%),
+        linear-gradient(135deg, transparent 25%, #667eea 25%, #667eea 27%, transparent 27%);
+    background-size: 100% 100%;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.center-circle h2 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.center-circle p {
+    font-size: 11px;
+    color: #666;
+    margin: 8px 0 0;
+    line-height: 1.3;
+}
+
+/* Cercle pointillé */
+.center-circle::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 360px;
+    height: 360px;
+    border: 2px dashed #d1d9e0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Container des étapes */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+
+/* Bloc étape */
+.step-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.step-content {
+    color: white;
+    padding: 20px 25px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.step-content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+.step-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-right: 20px;
+    margin-left: -60px;
+    flex-shrink: 0;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Couleurs des icônes identiques aux blocs */
+.step-item:nth-child(1) .step-icon {
+    background: linear-gradient(135deg, #00d4ff, #1e90ff);
+}
+
+.step-item:nth-child(2) .step-icon {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.step-item:nth-child(3) .step-icon {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.step-item:nth-child(4) .step-icon {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.step-item:nth-child(5) .step-icon {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+}
+
+/* Couleurs dégradées basées sur l'image originale */
+.step-item:nth-child(1) .step-content {
+    background: linear-gradient(135deg, #00d4ff, #1e90ff);
+}
+
+.step-item:nth-child(2) .step-content {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.step-item:nth-child(3) .step-content {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.step-item:nth-child(4) .step-content {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.step-item:nth-child(5) .step-content {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+}
+
+.step-text {
+    flex: 1;
+    margin-left: 50px
+}
+
+.step-text h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.step-text p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.step-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 15px;
+}
+
+/* Lignes de connexion */
+.connection-line {
+    position: absolute;
+    background: #d1d9e0;
+    z-index: 5;
+}
+
+.connection-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Couleurs des points selon l'étape - reprenant les couleurs de l'image */
+.connection-dot:nth-of-type(1) {
+    background: linear-gradient(135deg, #00d4ff, #1e90ff);
+}
+
+.connection-dot:nth-of-type(2) {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.connection-dot:nth-of-type(3) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.connection-dot:nth-of-type(4) {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.connection-dot:nth-of-type(5) {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .infographic-container {
+        flex-direction: column;
+        gap: 80px;
+    }
+    
+    .center-circle::before {
+        display: none;
+    }
+    
+    .steps-container {
+        align-items: center;
+    }
+}
+
+/* SECTION POURQUOI */
+.diagram-steps {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.diagram-steps::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(27,145,246,0.3);
+  z-index: 0;
+}
+
+.center-node {
+  z-index: 2;
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.step {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 180px;
+}
+
+.step .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.step h4 {
+  margin: 8px 0;
+  color: var(--primary);
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .diagram-steps {
+    flex-direction: column;
+  }
+  .diagram-steps::before {
+    display: none;
+  }
+}
+
+
+/* --- CTA FINAL --- */
+.coran-cta {
+  position: relative;
+  background: url('/medias/coran.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+.coran-cta .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 80px 20px;
+  border-radius: 15px;
+}
+
+.coran-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.coran-cta .cta-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.btn-big {
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.btn-big:hover {
+  background: var(--link-hover);
+  transform: scale(1.05);
+}
+
+.coran-cta .cta-note {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coran-cta {
+    padding: 60px 15px;
+  }
+  .coran-cta h2 {
+    font-size: 2rem;
+  }
+  .btn-big {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .connection-line,
+  .connection-dot {
+      display: none !important;
+  }
+
+  .step-content {
+        width: 300px; /* Plus large pour éviter de couper la bulle */
+        padding: 15px 20px 15px 60px; /* Garde de l'espace à gauche */
+        overflow: visible; /* Pour laisser dépasser l'icône */
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        margin-left: -50px; /* Pour que l'icône dépasse comme avant */
+    }
+
+    .step-text {
+        margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
+    }
+}
+

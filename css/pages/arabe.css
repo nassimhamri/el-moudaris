@@ -1,0 +1,430 @@
+/* ==============================
+    PAGE PROGRAMME ARABE
+================================*/
+.advantages-graphic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.program-card {
+  background: rgba(255, 255, 255);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.program-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(27, 145, 246, 0.1),
+    transparent
+  );
+   transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  opacity: 1;
+}
+
+.program-card:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+
+.icon-highlight {
+  position: relative;
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 20px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.icon-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  width: 0;
+  height: 40%;
+  background: rgba(27, 145, 246, 0.4);
+  border-radius: 50px;
+  transform: rotate(-2deg);
+  z-index: 3;
+  clip-path: polygon(
+    0% 30%, 10% 10%, 90% 0%, 100% 20%, 
+    95% 70%, 80% 100%, 10% 90%, 0% 70%
+  );
+}
+
+.icon-highlight.animate::after {
+  animation: markerHandDraw 1.5s ease-out forwards; /* Durée augmentée */
+}
+
+@keyframes markerHandDraw {
+  0% {
+    width: 0;
+    transform: rotate(-2deg) translateY(0px);
+  }
+  20% {
+    transform: rotate(-2deg) translateY(-1px);
+  }
+  40% {
+    transform: rotate(-2deg) translateY(1px);
+  }
+  60% {
+    transform: rotate(-2deg) translateY(-1px);
+  }
+  80% {
+    transform: rotate(-2deg) translateY(1px);
+  }
+  100% {
+    width: 75%;
+    transform: rotate(-2deg) translateY(0px);
+  }
+}
+
+.program-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.program-title {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.program-description {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(27, 145, 246, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  opacity: 0;
+}
+
+.program-card:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+
+
+/*  SECTION APPRENTISSAGE   */
+.timeline{
+    position: relative;
+    width: var(--w);
+    max-width: 100%;
+    min-height: 800px; /* garde une base mais permet l’auto-ajustement */
+    height: auto;      /* plus de hauteur forcée */
+    padding-bottom: 80px; /* espace interne sous les cartes */
+}
+
+/* Courbe */
+.line{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    transform:translateY(-50%);
+    z-index:0;
+}
+.line svg{ width:100%; height:250px; }
+
+/* Ombre */
+.line defs filter feDropShadow{}
+
+/* Connexions dynamiques */
+.connections{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* Cartes */
+.steps{
+    position:absolute;
+    inset:0;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 10px;
+    z-index:2;
+}
+
+.step{
+    position:relative;
+    width:var(--card-w);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.step-box{
+    width:100%;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    color:#fff;
+    background:linear-gradient(160deg,var(--g1) 0%, var(--g2) 100%);
+}
+
+.content{
+    padding:14px 16px 18px;
+}
+
+.label{
+    background:#fff;
+    color:var(--g2);
+    font-weight:800;
+    text-transform:uppercase;
+    text-align:center;
+    padding:10px 12px;
+    font-size:16px;
+}
+
+.step.top .label{
+    border-radius:var(--radius) var(--radius) 0 0;
+    order:-1;
+}
+.step.bottom .label{
+    border-radius:0 0 var(--radius) var(--radius);
+    order:2;
+}
+
+.tip{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:0; height:0;
+    border-left: var(--pointer) solid transparent;
+    border-right: var(--pointer) solid transparent;
+}
+.step.top .tip{
+    bottom:-10px;
+    border-top: calc(var(--pointer) + 4px) solid var(--g2);
+}
+.step.bottom .tip{
+    top:-10px;
+    border-bottom: calc(var(--pointer) + 4px) solid var(--g2);
+}
+
+.content h4{ margin:0 0 6px; font-weight:700; font-size:14px; }
+.content p{ margin:0; font-size:13px; line-height:1.4; }
+
+/* Position verticale */
+.step.top   { transform:translateY(-240px); }
+.step.bottom{ transform:translateY(240px);  }
+
+/* Dégradés par étape */
+.step1{ --g1:#ff4d79; --g2:#d81b60; }
+.step2{ --g1:#00bcd4; --g2:#007cba; }
+.step3{ --g1:#6ad33b; --g2:#31a34a; }
+.step4{ --g1:#ffc400; --g2:#ff9800; }
+.step5{ --g1:#7b4dff; --g2:#512da8; }
+.step6{ --g1:#00a88b; --g2:#00796b; }
+
+/* Responsive */
+@media (max-width: 960px){
+    .step{ width:180px; }
+}
+@media (max-width: 760px){
+    .timeline{ height:860px; }
+    .steps{ flex-wrap:wrap; gap:36px 16px; justify-content:center; transform:none; top:0; padding-top:40px; }
+    .step.top,.step.bottom{ transform:none; }
+    .line{ top:42%; }
+}
+
+/* RÉSUMÉ D'APPRENTISSAGE */
+.learning-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.summary-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border: 2px solid var(--primarysmall);
+}
+
+.summary-card h4 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.summary-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#distinctions,
+#apprentissage,
+#avantages,
+#cta-finale{
+  padding: 60px 20px;
+  text-align: center; /* pour centrer highlight-banner */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); /* petite ligne de séparation subtile en bas */
+}
+
+.highlight-banner {
+  background: var(--primary);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(27,145,246,0.25);
+  display: inline-block;
+  border-radius: 50px;
+  margin-top: 40px
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.stat {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.icon-stats {
+  font-size: 2rem;
+  background: var(--primary);
+  color: white;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+
+/*  SECTION CTA FINALE */
+
+#cta-finale {
+  padding: 60px 20px;
+}
+
+.cta-final-card {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  color: #333;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+  text-align: center;
+  border: 1px solid #e8e8e8;
+}
+
+.cta-final-card h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.cta-final-card p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.cta-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.feature-icon {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.btn-cta-final {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta-final:hover {
+  background: #0f6ec0;
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #777;
+}
