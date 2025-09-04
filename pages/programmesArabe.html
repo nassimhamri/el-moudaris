@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Moudaris – Programmes</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/global.css">
+  <link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/pages/arabe.css">
   <link rel="icon" href="https://nassimhamri.github.io/el-moudaris/medias/logo/favicon.png" type="image/png">
 </head>
 <body>
@@ -72,75 +73,109 @@
             <p class="title-description">Un programme structuré en 6 étapes essentielles</p>
         </div>
 
-        <div class="learning-timeline">
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">1</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Alphabétisation</h3>
-                    <p>Découvrez les 28 lettres arabes, leur forme et leurs sons. Apprenez à lire et écrire vos premiers mots.</p>
-                </div>
+        <div class="timeline">
+
+            <!-- Connexions dynamiques -->
+            <svg class="connections"></svg>
+
+            <!-- Courbe -->
+            <div class="line">
+            <svg viewBox="0 0 1200 250" preserveAspectRatio="none">
+                <defs>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.25)" />
+                </filter>
+                </defs>
+                <path d="
+                M 0 125
+                Q 100 250, 200 125
+                T 400 125
+                T 600 125
+                T 800 125
+                T 1000 125
+                T 1200 125
+                "
+                stroke="white" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#shadow)" />
+            </svg>
             </div>
 
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">2</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Compréhension de textes</h3>
-                    <p>Développez votre capacité à comprendre et analyser des textes de plus en plus complexes.</p>
-                </div>
-            </div>
+            <!-- Étapes -->
+            <div class="steps">
+      <div class="step step1 top">
+        <div class="step-box">
+          <div class="label">Alphabétisation</div>
+          <div class="content">
+            <p>Découvrez les 28 lettres arabes, leur forme et leurs sons. Apprenez à lire et écrire vos premiers mots.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
 
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">3</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Expression orale et écrite</h3>
-                    <p>Exprimez-vous clairement à l'oral et à l'écrit avec vocabulaire et structures appropriés.</p>
-                </div>
-            </div>
+      <div class="step step2 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Développez votre capacité à comprendre et analyser des textes de plus en plus complexes.</p>
+          </div>
+          <div class="label">Compréhension de textes</div>
+        </div>
+        <span class="tip"></span>
+      </div>
 
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">4</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Grammaire النحو</h3>
-                    <p>Maîtrisez les règles grammaticales fondamentales pour construire des phrases correctes.</p>
-                </div>
-            </div>
+      <div class="step step3 top">
+        <div class="step-box">
+          <div class="label">Expression orale et écrite</div>
+          <div class="content">
+            <p>Exprimez-vous clairement à l'oral et à l'écrit avec vocabulaire et structures appropriés.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
 
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">5</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Conjugaison الصرف</h3>
-                    <p>Apprenez les transformations des verbes selon les temps, personnes et contextes.</p>
-                </div>
-            </div>
+      <div class="step step4 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Maîtrisez les règles grammaticales fondamentales pour construire des phrases correctes.</p>
+          </div>
+          <div class="label">Grammaire النحو</div>
+        </div>
+        <span class="tip"></span>
+      </div>
 
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-number">6</div>
-                <div class="timeline-content">
-                    <div class="timeline-icon"></div>
-                    <h3>Éloquence البلاغة</h3>
-                    <p>Atteignez l'art de s'exprimer avec beauté, précision et impact rhétorique.</p>
-                </div>
+      <div class="step step5 top">
+        <div class="step-box">
+          <div class="label">Conjugaison الصرف</div>
+          <div class="content">
+            <p>Apprenez les transformations des verbes selon les temps, personnes et contextes.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step6 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Atteignez l'art de s'exprimer avec beauté, précision et impact rhétorique.</p>
+          </div>
+          <div class="label">Éloquence البلاغة</div>
+        </div>
+        <span class="tip"></span>
+      </div>
             </div>
         </div>
 
         <div class="learning-summary">
-            <div class="summary-card">
-                <h4>🎯 Votre objectif final</h4>
-                <p>Comprendre les textes religieux, sourates et ahadiths dans leur langue originale</p>
-            </div>
-            <div class="summary-card">
-                <h4>⏱️ À votre rythme</h4>
-                <p>10 niveaux progressifs adaptés à votre emploi du temps et capacités</p>
-            </div>
+        <div class="summary-card">
+            <h4>🎯 Votre objectif final</h4>
+            <p>Comprendre les textes religieux, sourates et ahadiths dans leur langue originale</p>
+        </div>
+        <div class="summary-card">
+            <h4>⏱️ À votre rythme</h4>
+            <p>10 niveaux progressifs adaptés à votre emploi du temps et capacités</p>
+        </div>
         </div>
     </div>
 </section>
-
+  
 <!-- SECTION AVANTAGES -->
 <section class="primary-section" id="avantages">
   <div class="container">
