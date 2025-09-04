@@ -145,7 +145,7 @@ body::before {
 }
 
 body {
-  background: url("/medias/accueil_arabe.jpg") center/cover no-repeat fixed;
+  background: url("https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg") center/cover no-repeat fixed;
 }
 
 /* ——— Navigation ——— */
@@ -404,7 +404,7 @@ body {
   .hamburger { display: flex; }
   
   body {
-    background-image: url("/medias/accueil_arabe.jpg");
+    background-image: url("https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg");
     background-attachment: scroll; /* Better on mobile */
   }
 }
