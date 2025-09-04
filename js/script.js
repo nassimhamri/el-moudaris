@@ -146,6 +146,7 @@ function initAnimations() {
   console.log("✅ Observer des animations activé");
 }
 
+
 /* ============================== 
    JAVASCRIPT POUR LA SECTION "NOS ATOUTS"
    ============================== */
@@ -430,7 +431,7 @@ function initSwiper() {
         },
         // Desktop
         1024: {
-          slidesPerView: 1,
+          slidesPerView: 1, // Même sur desktop, 1 seul témoignage
           spaceBetween: 30,
         }
       },
@@ -832,6 +833,73 @@ function drawConnections() {
         }
     });
 }
+
+/*  PROGRAMME ARABE */
+  function drawConnectionsArabe(){
+      const timeline  = document.querySelector('.timeline');
+      const overlay   = document.querySelector('.connections');
+      const pathSvg   = document.querySelector('.line svg');
+      const path      = document.querySelector('.line path');
+      const steps     = Array.from(document.querySelectorAll('.step'));
+
+      overlay.innerHTML = '';
+
+      const vbW = 1200, vbH = 250;
+      const svgRect = pathSvg.getBoundingClientRect();
+      const parentRect = timeline.getBoundingClientRect();
+
+      const domXtoSvg = (xDom) => ( (xDom - svgRect.left) * (vbW / svgRect.width) );
+      const svgYtoDom = (ySvg) => ( svgRect.top + (ySvg * svgRect.height / vbH) - parentRect.top );
+
+      function getYatX(path, xSvg){
+        const total = path.getTotalLength();
+        let start = 0, end = total, p;
+        for(let i=0;i<25;i++){
+          const mid = (start + end) / 2;
+          p = path.getPointAtLength(mid);
+          if (p.x < xSvg) start = mid; else end = mid;
+        }
+        return p.y;
+      }
+
+      steps.forEach(step=>{
+        const tip = step.querySelector('.tip').getBoundingClientRect();
+        const xDomCenter = tip.left + tip.width/2;
+        const yDomStart  = step.classList.contains('top') ? tip.bottom : tip.top;
+
+        const xSvg = domXtoSvg(xDomCenter);
+        const ySvg = getYatX(path, xSvg);
+        const yOnCurveDom = svgYtoDom(ySvg);
+
+        const x = xDomCenter - parentRect.left;
+        const y1 = yDomStart  - parentRect.top;
+        const y2 = yOnCurveDom;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('x1', x);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', getComputedStyle(step).getPropertyValue('--g2').trim() || '#777');
+        line.setAttribute('stroke-width', '3');
+        line.setAttribute('stroke-linecap', 'round');
+        line.setAttribute('stroke-dasharray', '2 7');
+        line.setAttribute('opacity', '0.9');
+        overlay.appendChild(line);
+
+        const dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        dot.setAttribute('cx', x);
+        dot.setAttribute('cy', y2);
+        dot.setAttribute('r', '8');
+        dot.setAttribute('fill', getComputedStyle(step).getPropertyValue('--g2').trim() || '#777');
+        dot.setAttribute('stroke', 'white');
+        dot.setAttribute('stroke-width', '3');
+        overlay.appendChild(dot);
+      });
+    }
+
+    window.addEventListener('load',  drawConnectionsArabe);
+    window.addEventListener('resize', drawConnectionsArabe);
 
 // Appel initial après chargement
 window.addEventListener('load', () => {
