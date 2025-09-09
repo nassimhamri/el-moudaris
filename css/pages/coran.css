@@ -8,7 +8,7 @@
   width: 100%;
   height: 400px; /* hauteur native de l'image */
   margin: var(--nav-h) auto;
-  background: url('/medias/banniereArabe.jpg') center center / cover no-repeat;
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/banniereArabe.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
 @media (max-width: 768px) {
   .coran-banner {
     height: 70vh;
-    background: url('/medias/banniereArabe.jpg') center/cover no-repeat;
+    background: url('https://nassimhamri.github.io/el-moudaris/medias/banniereArabe.jpg') center/cover no-repeat;
   }
 
   .coran-banner h1 {
@@ -680,7 +680,7 @@
 /* --- CTA FINAL --- */
 .coran-cta {
   position: relative;
-  background: url('/medias/coran.jpg') center/cover no-repeat;
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran.jpg') center/cover no-repeat;
   padding: 100px 20px;
   text-align: center;
   color: white;
@@ -765,4 +765,5 @@
         margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
     }
 }
+
 
