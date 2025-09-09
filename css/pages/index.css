@@ -536,3 +536,9 @@ HERO
   opacity: 1;
   transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+  .advantages-graphic {
+    grid-template-columns: 1fr;
+  }
+}

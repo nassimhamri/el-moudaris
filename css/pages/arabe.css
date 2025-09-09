@@ -1,12 +1,32 @@
 /* ==============================
     PAGE PROGRAMME ARABE
 ================================*/
+
+/* BANNIÈRE */
+.program-banner {
+  position: relative;
+  width: 100%;
+  height: 400px; /* hauteur native de l'image */
+  margin: var(--nav-h) auto;
+  background: url('/medias/banniereArabe.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+
 .advantages-graphic {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
+.program-image-banner{
+  margin: var(--nav-h) auto;
+}
 .program-card {
   background: rgba(255, 255, 255);
   backdrop-filter: blur(10px);
@@ -258,14 +278,39 @@
 .step6{ --g1:#00a88b; --g2:#00796b; }
 
 /* Responsive */
-@media (max-width: 960px){
-    .step{ width:180px; }
-}
-@media (max-width: 760px){
-    .timeline{ height:860px; }
-    .steps{ flex-wrap:wrap; gap:36px 16px; justify-content:center; transform:none; top:0; padding-top:40px; }
-    .step.top,.step.bottom{ transform:none; }
-    .line{ top:42%; }
+
+@media (max-width: 768px) {
+  .advantages-graphic {
+    grid-template-columns: 1fr; /* une seule colonne */
+  }
+
+  .timeline {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .steps {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    transform: none;
+    top: auto;
+  }
+
+  .step {
+    transform: none !important; /* annule les translateY(-260px / 260px) */
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .line {
+    display: none; /* on masque la courbe horizontale sur mobile */
+  }
+
+  .connections {
+    display: none; /* idem pour les traits/points */
+  }
 }
 
 /* RÉSUMÉ D'APPRENTISSAGE */
@@ -298,14 +343,7 @@
   margin: 0;
 }
 
-#distinctions,
-#apprentissage,
-#avantages,
-#cta-finale{
-  padding: 60px 20px;
-  text-align: center; /* pour centrer highlight-banner */
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); /* petite ligne de séparation subtile en bas */
-}
+
 
 .highlight-banner {
   background: var(--primary);
@@ -315,9 +353,9 @@
   font-weight: 500;
   text-align: center;
   box-shadow: 0 4px 15px rgba(27,145,246,0.25);
-  display: inline-block;
+  display: block;
   border-radius: 50px;
-  margin-top: 40px
+  margin: 40px auto 0;
 }
 
 

@@ -1,0 +1,462 @@
+:root {
+      --card-bg: #fff;
+      --radius: 20px;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      --accent-purple: linear-gradient(135deg, #6a11cb, #2575fc);
+      --accent-teal: linear-gradient(135deg, #11998e, #38ef7d);
+      --accent-orange: linear-gradient(135deg, #f7971e, #ffd200);
+      --accent-pink: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* ============================ 
+HERO
+============================ */
+.hero{
+    position:relative;
+    background:url('/medias/bannersoleil.webp');
+    background-color:var(--primary); 
+    min-height: 40rem; 
+    overflow:hidden;
+    display:grid;
+    place-items:center;
+    text-align:center; 
+    border-radius: 0px 0px 50px 50px; 
+    padding-top: 1rem;
+}
+
+/* Nuages */
+.cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
+.cloud.one{left:100%;width:100px;animation:cloudMove 55s linear infinite}
+.cloud.two{left:100%;width:120px;top:16rem;animation:cloudMove 55s linear infinite 10s}
+@keyframes cloudMove{to{transform:translateX(-130vw)}}
+
+/* Accroche */
+.container-hero {padding:25px;margin-top: -200px;}
+.container-hero h1 {font-size:1.2rem;letter-spacing:.5px;margin-top:.5rem; text-transform:uppercase;color:white;}
+.container-hero h2 {font-size: 3.55em;color:white;}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; z-index: 2;}
+
+/* Maison */
+.house{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;max-width:70%;z-index: 1}
+
+/* Responsive */
+@media(max-width:840px){
+  .cloud.one{width:90px}
+  .cloud.two{width:110px}
+  .container-hero h1 {font-size:0.8rem;}
+  .container-hero h2 {font-size: 1.65em;}
+}
+
+/* ============================== 
+     ICON AUTHORITY
+  ============================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* Carte Stat */
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Ligne animée au hover */
+.stat::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.stat:hover::after {
+  opacity: 1;
+  width: 80%;
+}
+
+/* Icône circulaire */
+.icon-circle {
+  width: clamp(80px, 6vw, 100px);
+  height: clamp(80px, 6vw, 100px);
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(27,145,246,0.3);
+  transition: transform 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.08);
+}
+
+.icon-stats {
+  width: clamp(40px, 4vw, 55px);
+  height: clamp(40px, 4vw, 55px);
+}
+
+/* Texte */
+.stat-number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label-title {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.stat-label small {
+  color: var(--light-dark);
+}
+
+/* TABS */
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: var(--primarysmall);
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+
+  transition: var(--transition);
+   border-radius: 9px 9px 0 0;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  color: white;
+  background: var(--primary);
+  border-color: var(--accent);
+      border-radius: 9px 9px 0 0;
+}
+
+/* FEES LIST */
+.fees {
+  list-style: none;
+  padding: 3px 8px;
+  margin: 20px 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+
+.fees li {
+  background-color:var(--primarysmall);
+  padding: 3px 8px;
+  border-radius: var(--border-radius);
+}
+
+/* ============================== 
+     GRILLES TARIFFAIRE
+  ============================== */
+
+.pricing-container {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: var(--max-w); /* pour centrer et limiter la largeur */
+  margin: 0 auto;
+}
+
+.card-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+  padding: 3px; /* épaisseur de la bordure */
+  box-sizing: border-box;
+  min-height: 520px;
+}
+
+.card-wrapper.purple { background: var(--accent-purple); }
+.card-wrapper.teal { background: var(--accent-teal); }
+.card-wrapper.orange { background: var(--accent-orange); }
+.card-wrapper.pink { background: var(--accent-pink); }
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-wrapper.purple .header { background: var(--accent-purple); }
+.card-wrapper.teal .header { background: var(--accent-teal); }
+.card-wrapper.orange .header { background: var(--accent-orange); }
+.card-wrapper.pink .header { background: var(--accent-pink); }
+
+.card .header {
+    height: 140px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.card .header .title {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .content {
+    padding: 50px 30px 20px;
+    text-align: center;
+}
+
+.hours {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #333;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    text-align: left;
+}
+
+.features li {
+    margin: 10px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.features li::before {
+    content: "✔";
+    color: var(--primary);
+    font-weight: bold;
+}
+.features li.unavailable::before {
+  content: "✖";   /* croix */
+  color: #d9534f; /* rouge (ou autre couleur) */
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    top: 140px;
+    width: 50%;
+    height: 40px;
+    background: #d9d9d9;
+    z-index: 1;
+}
+
+.card::before {
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+}
+
+.card::after {
+    right: 0;
+    clip-path: polygon(50% 100%, 100% 0, 100% 100%, 0 0);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0d6efd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* TAB PANES */
+.tab-pane {
+  display: none;
+}
+.tab-pane.active {
+  display: block;
+}
+
+
+.text-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* permet d’empiler sur petit écran */
+}
+
+.text-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.text-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.text-image img:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  flex: 1;
+  min-width: 300px;
+}
+.highlight {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+
+.cta-grids {
+    display: flex;
+    gap: 2.5rem;
+    background-color: var(--primary);
+    border-radius: 12px;
+}
+
+/* ===============================
+   Style commun aux cartes CTA
+================================= */
+.cta-container {
+  width: 100%; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* centre le bloc */
+}
+
+.cta-grids {
+  display: flex;
+  gap: 2.5rem;
+  background-color: var(--primary);
+  border-radius: 12px;
+  width: var(--max-w);
+  max-width: 100%;
+}
+
+/* -- Style commun aux cartes -- */
+.cta-grid {
+  position: relative;
+  flex: 1;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  padding: 20px;
+}
+
+.cta-grid h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+  
+
+/* -- Carte 1 : bons plans -- */
+.cta-inscription {
+  border-bottom-right-radius: 150px;
+}
+
+.cta-inscription::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0000007a;
+  
+}
+
+.cta-inscription .content {
+  position: relative;
+  max-width: 100%;
+}
+
+.cta-faq {
+  background: url('/medias/bannercta.webp');
+}
+
+.cta-faq .content {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 768px) {
+  .cta-grid {
+    height: auto;
+    min-height: 220px;
+    padding: 15px;
+  }
+
+  .cta-grid h2 {
+    font-size: 1.4rem;
+  }
+}

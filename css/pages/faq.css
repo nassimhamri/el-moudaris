@@ -1,0 +1,208 @@
+/* ============================ 
+HERO
+============================ */
+.hero{
+    position:relative;
+    background:url('/medias/bannersoleil.webp');
+    background-color:var(--primary); 
+    min-height: 40rem; 
+    overflow:hidden;
+    display:grid;
+    place-items:center;
+    text-align:center; 
+    border-radius: 0px 0px 50px 50px; 
+    padding-top: 1rem;
+}
+
+/* Nuages */
+.cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
+.cloud.one{left:100%;width:100px;animation:cloudMove 55s linear infinite}
+.cloud.two{left:100%;width:120px;top:16rem;animation:cloudMove 55s linear infinite 10s}
+@keyframes cloudMove{to{transform:translateX(-130vw)}}
+
+/* Accroche */
+.container-hero {padding:25px;margin-top: -200px;}
+.container-hero h1 {font-size:1.2rem;letter-spacing:.5px;margin-top:.5rem; text-transform:uppercase;color:white;}
+.container-hero h2 {font-size: 3.55em;color:white;}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; z-index: 2;}
+
+/* Maison */
+.house{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;max-width:70%;z-index: 1}
+
+/* Responsive */
+@media(max-width:840px){
+  .cloud.one{width:90px}
+  .cloud.two{width:110px}
+  .container-hero h1 {font-size:0.8rem;}
+  .container-hero h2 {font-size: 1.65em;}
+}
+
+/* ============================ 
+    PAGE FAQ
+     ============================ */
+
+.container-faq-title { max-width: 350px; margin: 20px auto;}
+
+.container-faq-questions { max-width: 800px; margin: 20px auto;}
+
+.accordion-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.accordion-item.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgb(40 136 245 / 20%);
+}
+.accordion-button {
+  background-color: transparent;
+  color: var(--base);
+  cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size:15px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  
+  text-transform: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.accordion-button:hover,
+.accordion-item.active .accordion-button {
+  color: var(--primary);
+  background-color: var(--primarysmall);
+  border-radius: var(--border-radius);
+}
+.accordion-button::after {
+  content: '+';
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.accordion-item.active .accordion-button::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  font-size: 18px;
+  color: var(--light-dark);
+  line-height: 1.6;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+.accordion-item.active .accordion-content {
+  max-height: 44rem; /* espace généreux */
+  padding-bottom: 1rem;
+}
+
+
+/* Focus Global */
+:focus-visible { outline: 3px solid #ffd000; outline-offset: 2px; }
+
+/* ------------------  BREAKPOINTS ----------------------- */
+@media (max-width: 992px) {
+  h2 { font-size: clamp(1.8rem, 1.2rem + 2vw, 2.5rem); }
+  .h3sombre,
+  .h3blanc { font-size: 1.75rem; }
+  .chiffreautority { font-size: 1.875rem; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.55rem, 1.2rem + 2vw, 1.8rem); }
+  h2 { font-size: clamp(1.5rem, 1rem + 2.5vw, 2rem); }
+  p, .pwhite, ul, ol { font-size: var(--font-xs); }
+  .icone { width: 45%; }
+}
+@media (max-width: 480px) {
+  button { padding: 0.5rem 1rem; }
+  .divcover { padding: 0.156rem; }
+  .accordion-button { padding: 1rem 1.25rem; }
+}
+
+
+/* ===============================
+   Style commun aux cartes CTA
+================================= */
+.cta-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Fond appliqué au parent, pas aux enfants */
+.cta-grids {
+  display: flex;
+  gap: 2.5rem;
+  border-radius: 12px;
+  background-color: var(--primary);
+  max-width: 100%;
+}
+
+/* Cartes */
+.cta-grid {
+  flex: 1;
+  height: 300px;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  padding: 20px;
+}
+
+.cta-grid .content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-grid h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+/* -- Carte 1 : bons plans -- */
+.cta-inscription {
+  border-bottom-right-radius: 150px;
+}
+
+.cta-inscription::before {
+  content: "";
+  position: absolute;
+  inset: 0;  
+}
+
+.cta-inscription .content {
+  position: relative;
+  max-width: 100%;
+}
+
+/* -- Carte 2 : téléphones -- */
+.cta-faq {
+    background: url('/medias/bannercta.webp');
+}
+
+.cta-faq .content {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0d6efd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}

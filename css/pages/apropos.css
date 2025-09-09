@@ -1,0 +1,92 @@
+/* ============================ 
+HERO
+============================ */
+.hero{
+    position:relative;
+    background:url('/medias/bannersoleil.webp');
+    background-color:var(--primary); 
+    min-height: 40rem; 
+    overflow:hidden;
+    display:grid;
+    place-items:center;
+    text-align:center; 
+    border-radius: 0px 0px 50px 50px; 
+    padding-top: 1rem;
+}
+
+/* Nuages */
+.cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
+.cloud.one{left:100%;width:100px;animation:cloudMove 55s linear infinite}
+.cloud.two{left:100%;width:120px;top:16rem;animation:cloudMove 55s linear infinite 10s}
+@keyframes cloudMove{to{transform:translateX(-130vw)}}
+
+/* Accroche */
+.container-hero {padding:25px;margin-top: -200px;}
+.container-hero h1 {font-size:1.2rem;letter-spacing:.5px;margin-top:.5rem; text-transform:uppercase;color:white;}
+.container-hero h2 {font-size: 3.55em;color:white;}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; z-index: 2;}
+
+/* Maison */
+.house{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;max-width:70%;z-index: 1}
+
+/* Responsive */
+@media(max-width:840px){
+  .cloud.one{width:90px}
+  .cloud.two{width:110px}
+  .container-hero h1 {font-size:0.8rem;}
+  .container-hero h2 {font-size: 1.65em;}
+}
+
+.handwritten {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.handwritten-title {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.title-text {text-align: center; margin-bottom:50px;}
+.tile-text2 {text-align: left; margin-bottom: 30px;}
+.title-text h2, .title-text h2 {font-size: 2rem; margin: 0px 0px 15px 0px;}
+
+.title-text2 h2::before { /*trait à gauche */
+  content: "";
+  display: inline-block;
+  width: 5px;             /* longueur du trait (modifiez si besoin) */
+  height: 30px;             /* ÉPAISSEUR demandée */
+  background: #2d8bf7;     /* couleur */
+  margin-right: 5px;     /* écart entre le trait et le texte */
+  transform: translateY(0px); /* remonte légèrement le trait pour l’aligner sur la ligne du texte */
+ border-radius: 99px;
+}
+
+.imgtext-inner {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.imgtext-text {
+  flex: 1 1 320px;
+  max-width: 650px;
+}
+
+ .badge {  font-size: 0.95rem;
+  color: #0d6efd;
+  background: #e7f1ff;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--border-radius);
+  text-transform: lowercase;};
+
+.imgtext-text p {
+  line-height: 1.6;
+  margin: 0;
+}

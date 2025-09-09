@@ -3,12 +3,12 @@
 ================================*/
 
 /* BANNIÈRE */
-.coran-banner {
+.program-banner {
   position: relative;
   width: 100%;
-  height: 90vh; /* occupe presque tout l’écran */
-  margin: 80px auto;
-  background: url('/medias/coran.jpg') center/cover no-repeat;
+  height: 400px; /* hauteur native de l'image */
+  margin: var(--nav-h) auto;
+  background: url('/medias/banniereArabe.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,57 +17,11 @@
   overflow: hidden;
 }
 
-.coran-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.coran-banner-content {
-  position: relative;
-  max-width: 800px;
-  padding: 20px;
-  z-index: 2;
-}
-
-.coran-banner h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  line-height: 1.2;
-}
-
-.coran-banner p {
-  font-size: 1.3rem;
-  margin-bottom: 25px;
-  font-weight: 300;
-}
-
-.coran-banner .btn-primary {
-  background: var(--primary);
-  color: white;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.coran-banner .btn-primary:hover {
-  background: #0d6efd;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
 /* ========= Responsive ========= */
 @media (max-width: 768px) {
   .coran-banner {
     height: 70vh;
-    background: url('/medias/coran-ferme-mobile.jpg') center/cover no-repeat;
+    background: url('/medias/banniereArabe.jpg') center/cover no-repeat;
   }
 
   .coran-banner h1 {
