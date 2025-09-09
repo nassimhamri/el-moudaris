@@ -3,7 +3,7 @@ HERO
 ============================ */
 .hero{
     position:relative;
-    background:url('/medias/bannersoleil.webp');
+    background:url('https://nassimhamri.github.io/el-moudaris/medias/bannersoleil.webp');
     background-color:var(--primary); 
     min-height: 40rem; 
     overflow:hidden;
@@ -182,7 +182,7 @@ HERO
 
 /* -- Carte 2 : téléphones -- */
 .cta-faq {
-    background: url('/medias/bannercta.webp');
+    background: url('https://nassimhamri.github.io/el-moudaris/medias/bannercta.webp');
 }
 
 .cta-faq .content {
@@ -206,3 +206,4 @@ HERO
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
+
