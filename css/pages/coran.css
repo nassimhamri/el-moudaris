@@ -8,7 +8,7 @@
   width: 100%;
   height: 400px; /* hauteur native de l'image */
   margin: var(--nav-h) auto;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/banniereArabe.jpg') center center / cover no-repeat;
+  background: url='https://nassimhamri.github.io/el-moudaris/medias/accueil_coran.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
 @media (max-width: 768px) {
   .coran-banner {
     height: 70vh;
-    background: url('https://nassimhamri.github.io/el-moudaris/medias/banniereArabe.jpg') center/cover no-repeat;
+    background: url='https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg') center/cover no-repeat;
   }
 
   .coran-banner h1 {
@@ -680,29 +680,16 @@
 /* --- CTA FINAL --- */
 .coran-cta {
   position: relative;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/coran.jpg') center/cover no-repeat;
-  padding: 100px 20px;
-  text-align: center;
+  width: 100%;
+  height: 400px; /* hauteur native de l'image */
+  margin: var(--nav-h) auto;
+  background: url='https://nassimhamri.github.io/el-moudaris/medias/accueil_coran.jpg') center center / cover no-repeat;
+  display: flex;
   color: white;
-}
-
-.coran-cta .overlay {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 80px 20px;
-  border-radius: 15px;
-}
-
-.coran-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.coran-cta .cta-subtext {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  color: #f1f1f1;
+  overflow: hidden;
+  align-items: flex-end;      /* colle le contenu en bas */
+  justify-content: flex-end;  /* colle le contenu à droite */
+  padding: 100px; 
 }
 
 .btn-big {
@@ -714,20 +701,12 @@
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
-  display: inline-block;
-  margin-bottom: 20px;
+  margin-right: 150px;
 }
 
 .btn-big:hover {
   background: var(--link-hover);
   transform: scale(1.05);
-}
-
-.coran-cta .cta-note {
-  font-size: 0.9rem;
-  color: #ddd;
-  margin-top: 10px;
-  font-style: italic;
 }
 
 /* Responsive */
@@ -765,5 +744,4 @@
         margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
     }
 }
-
 
