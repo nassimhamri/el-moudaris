@@ -20,48 +20,78 @@ function safeQuerySelectorAll(selector) {
   }
 }
 
-(function loadNavigation() {
-  console.log("1. Tentative de chargement de la navigation...");
+(function loadNavigationAndFooter() {
+  console.log("1. Tentative de chargement de la navigation et du footer...");
+  
+  const navPlaceholder = document.querySelector('#nav-placeholder');
+  const footPlaceholder = document.querySelector('#footer-placeholder');
 
-  const placeholder = document.querySelector('#nav-placeholder');
-  if (!placeholder) {
-    console.log("❌ Nav placeholder non trouvé");
-    return;
-  }
+  // AJOUT: Cache-buster temporaire pour forcer le rechargement
+  const cacheBuster = "?v=" + Date.now();
 
   // Détecter si on est en local ou sur GitHub Pages
-  let navPath;
+  let navPath, footPath;
   if (window.location.hostname.includes("github.io")) {
-    // En ligne (GitHub Pages) → utiliser URL absolue
-    navPath = "https://nassimhamri.github.io/el-moudaris/pages/nav.html";
-  } else {
-    // En local → utiliser chemin relatif selon l’emplacement de la page
-    navPath = window.location.pathname.includes("/pages/")
-      ? "../pages/nav.html"
-      : "pages/nav.html";
+    // En ligne (GitHub Pages)
+    navPath  = "https://nassimhamri.github.io/el-moudaris/pages/nav.html" + cacheBuster;
+    footPath = "https://nassimhamri.github.io/el-moudaris/pages/footer.html" + cacheBuster;
+  } 
+  else {
+    // En local
+    const inPages = window.location.pathname.includes("/pages/");
+    navPath  = inPages ? "../pages/nav.html" + cacheBuster   : "pages/nav.html" + cacheBuster;
+    footPath = inPages ? "../pages/footer.html" + cacheBuster: "pages/footer.html" + cacheBuster;
   }
 
-  fetch(navPath)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      return response.text();
-    })
-    .then(html => {
-      placeholder.innerHTML = html;
-      console.log("✅ Navigation chargée");
-      setTimeout(initHamburgerMenu, 100);
-    })
-    .catch(err => {
-      console.error('❌ Erreur chargement nav:', err);
-      placeholder.innerHTML = `
-        <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
-          <strong>Navigation temporairement indisponible</strong>
-        </nav>`;
-    });
-})();
+  console.log("Chemins avec cache-buster:", { navPath, footPath });
 
+  // Chargement de la nav
+  if (navPlaceholder) {
+    fetch(navPath)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        navPlaceholder.innerHTML = html;
+        console.log("✅ Navigation chargée");
+        setTimeout(initHamburgerMenu, 100);
+      })
+      .catch(err => {
+        console.error('❌ Erreur chargement nav:', err);
+        navPlaceholder.innerHTML = `
+          <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
+            <strong>Navigation temporairement indisponible</strong>
+          </nav>`;
+      });
+  }
+
+  // Chargement du footer
+  if (footPlaceholder) {
+    fetch(footPath)
+      .then(response => {
+        console.log("🔍 Footer chargé depuis:", response.url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        footPlaceholder.innerHTML = html;
+        console.log("✅ Footer chargé");
+        
+        // Vérification que les nouveaux liens sont corrects
+        const testLink = footPlaceholder.querySelector('a[href="/pages/tarifs.html"]');
+        console.log("Test lien avec chemins absolus:", testLink ? "✅ Trouvé" : "❌ Non trouvé");
+      })
+      .catch(err => {
+        console.error('❌ Erreur chargement footer:', err);
+        footPlaceholder.innerHTML = `
+          <footer style="background: #f8f9fa; padding: 10px; text-align: center;">
+            <strong>Footer temporairement indisponible</strong>
+          </footer>`;
+      });
+  }
+
+})();
 
 // ============================================
 // MENU HAMBURGER - VERSION SÉCURISÉE
@@ -589,38 +619,6 @@ function initTabs() {
   if (buttons.length > 0) {
     console.log("✅ Onglets initialisés");
   }
-}
-
-// ============================================
-// FOOTER PROJECTION
-// ============================================
-function initFooter() {
-  console.log("8. Chargement du footer...");
-  
-  const container = safeQuerySelector('#footer-placeholder');
-  if (!container) {
-    console.log("❌ Footer placeholder non trouvé");
-    return;
-  }
-
-  fetch('https://nassimhamri.github.io/el-moudaris/pages/footer.html')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      return response.text();
-    })
-    .then(html => {
-      container.innerHTML = html;
-      console.log("✅ Footer chargé");
-    })
-    .catch(err => {
-      console.error('❌ Erreur chargement footer:', err);
-      container.innerHTML = `
-        <footer style="background: #333; color: white; padding: 20px; text-align: center;">
-          <p>Footer temporairement indisponible</p>
-        </footer>`;
-    });
 }
 
 // ============================================
