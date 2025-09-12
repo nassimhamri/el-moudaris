@@ -58,7 +58,7 @@
         <!-- Carte Homme -->
         <div class="course-banner-card">
           <div class="course-banner-card-inner">
-            <div class="course-banner-card-front" style="background-image: url('../medias/apprendsarabe.jpg');">
+            <div class="course-banner-card-front" style="background-image: url='https://nassimhamri.github.io/el-moudaris/../medias/apprendsarabe.jpg');">
               <h3>Contact Hommes</h3>
             </div>
 
@@ -74,7 +74,7 @@
         <!-- Carte Femme -->
         <div class="course-banner-card">
           <div class="course-banner-card-inner">
-            <div class="course-banner-card-front" style="background-image: url('../medias/apprendscoran.jpg');">
+            <div class="course-banner-card-front" style="background-image: url='https://nassimhamri.github.io/el-moudaris/../medias/apprendscoran.jpg');">
               <h3>Contact Femmes</h3>
             </div>
 
@@ -89,7 +89,7 @@
         <!-- Carte Enfant -->
         <div class="course-banner-card">
           <div class="course-banner-card-inner">
-            <div class="course-banner-card-front" style="background-image: url('../medias/apprendsenfant.jpg');">
+            <div class="course-banner-card-front" style="background-image: url='https://nassimhamri.github.io/el-moudaris/../medias/apprendsenfant.jpg');">
               <h3>Contact Enfants</h3>
             </div>
             <div class="course-banner-card-back">
@@ -107,6 +107,44 @@
 </section>
 
 <style>
+
+  
+.hero{
+  position:relative;
+  background:url='https://nassimhamri.github.io/el-moudaris//medias/bannersoleil.webp');
+  background-color:var(--primary); 
+  min-height: 40rem; 
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  text-align:center; 
+  border-radius: 0px 0px 50px 50px; 
+  padding-top: 1rem;
+}
+
+/* Nuages */
+.cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
+.cloud.one{left:100%;width:100px;animation:cloudMove 55s linear infinite}
+.cloud.two{left:100%;width:120px;top:16rem;animation:cloudMove 55s linear infinite 10s}
+@keyframes cloudMove{to{transform:translateX(-130vw)}}
+
+/* Accroche */
+.container-hero {padding:25px;margin-top: -200px;}
+.container-hero h1 {font-size:1.2rem;letter-spacing:.5px;margin-top:.5rem; text-transform:uppercase;color:white;}
+.container-hero h2 {font-size: 3.55em;color:white;}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; z-index: 2;}
+
+/* Maison */
+.house{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;max-width:70%;z-index: 1}
+
+/* Responsive */
+@media(max-width:840px){
+  .cloud.one{width:90px}
+  .cloud.two{width:110px}
+  .container-hero h1 {font-size:0.8rem;}
+  .container-hero h2 {font-size: 1.65em;}
+}
+
   .card {
   width: 100%;
   height: 380px;
