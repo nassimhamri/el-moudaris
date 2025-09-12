@@ -8,7 +8,7 @@
   width: 100%;
   height: 400px; /* hauteur native de l'image */
   margin: var(--nav-h) auto;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/banniereArabe.jpg') center center / cover no-repeat;
+  background: src='https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,8 +262,8 @@
     border-bottom: calc(var(--pointer) + 4px) solid var(--g2);
 }
 
-.content h4{ margin:0 0 6px; font-weight:700; font-size:14px; }
-.content p{ margin:0; font-size:13px; line-height:1.4; }
+.content h4{ margin:0 0 6px; font-weight:700; font-size:16px; }
+.content p{ margin:0; font-size:13px; line-height:1.4; color:#fff;}
 
 /* Position verticale */
 .step.top   { transform:translateY(-240px); }
@@ -343,8 +343,6 @@
   margin: 0;
 }
 
-
-
 .highlight-banner {
   background: var(--primary);
   color: white;
@@ -358,17 +356,25 @@
   margin: 40px auto 0;
 }
 
-
+/* ============================== 
+  ICON AUTHORITY
+============================== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
 }
 
+/* Carte Stat */
 .stat {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--border-radius);
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -379,17 +385,45 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.icon-stats {
-  font-size: 2rem;
+/* Ligne animée au hover */
+.stat::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
   background: var(--primary);
-  color: white;
-  width: 70px;
-  height: 70px;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.stat:hover::after {
+  opacity: 1;
+  width: 80%;
+}
+
+/* Icône circulaire */
+.icon-circle {
+  width: clamp(80px, 6vw, 100px);
+  height: clamp(80px, 6vw, 100px);
+  background: var(--primary);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 15px;
+  box-shadow: 0 6px 15px rgba(27,145,246,0.3);
+  transition: transform 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.08);
+}
+
+.icon-stats {
+  width: clamp(40px, 4vw, 55px);
+  height: clamp(40px, 4vw, 55px);
 }
 
 
@@ -465,5 +499,4 @@
   margin-top: 15px;
   font-size: 0.85rem;
   color: #777;
-
 }
