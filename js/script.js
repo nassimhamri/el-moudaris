@@ -67,27 +67,23 @@ function safeQuerySelectorAll(selector) {
   }
 
   // Chargement du footer
-  if (footPlaceholder) {
+ if (footPlaceholder) {
     fetch(footPath)
       .then(response => {
-        console.log("🔍 Footer chargé depuis:", response.url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.text();
       })
       .then(html => {
         footPlaceholder.innerHTML = html;
-        console.log("✅ Footer chargé");
-        
-        // Vérification que les nouveaux liens sont corrects
-        const testLink = footPlaceholder.querySelector('a[href="/pages/tarifs.html"]');
-        console.log("Test lien avec chemins absolus:", testLink ? "✅ Trouvé" : "❌ Non trouvé");
+        console.log("✅ Navigation chargée");
+        setTimeout(initHamburgerMenu, 100);
       })
       .catch(err => {
-        console.error('❌ Erreur chargement footer:', err);
+        console.error('❌ Erreur chargement nav:', err);
         footPlaceholder.innerHTML = `
-          <footer style="background: #f8f9fa; padding: 10px; text-align: center;">
-            <strong>Footer temporairement indisponible</strong>
-          </footer>`;
+          <nav style="background: #f8f9fa; padding: 10px; text-align: center;">
+            <strong>Navigation temporairement indisponible</strong>
+          </nav>`;
       });
   }
 
