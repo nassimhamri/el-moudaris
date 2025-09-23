@@ -4,18 +4,19 @@
 
 /* BANNIÈRE */
 .program-banner {
-  position: relative;
-  width: 100%;
-  height: 400px; /* hauteur native de l'image */
-  margin: var(--nav-h) auto;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg') center center / cover no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
+  margin: 0 auto;          /* centre le conteneur */
   overflow: hidden;
 }
+
+.hero-img {
+  width: 100%;   /* fixe la largeur */
+  height: auto;    /* garde le ratio */
+  display: block;
+  margin-top: var(--nav-h);       /* pas de marge parasite */
+}
+
 
 
 .advantages-graphic {
@@ -500,5 +501,3 @@
   font-size: 0.85rem;
   color: #777;
 }
-
-

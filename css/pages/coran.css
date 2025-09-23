@@ -4,24 +4,24 @@
 
 /* BANNIÈRE */
 .program-banner {
-  position: relative;
-  width: 100%;
-  height: 400px; /* hauteur native de l'image */
-  margin: var(--nav-h) auto;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/accueil_coran.jpg') center center / cover no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
+  margin: 0 auto;          /* centre le conteneur */
   overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;   /* fixe la largeur */
+  height: auto;    /* garde le ratio */
+  display: block;
+  margin-top: var(--nav-h);       /* pas de marge parasite */
 }
 
 /* ========= Responsive ========= */
 @media (max-width: 768px) {
   .coran-banner {
     height: 70vh;
-    background: url('https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg') center/cover no-repeat;
+    background: url('/medias/accueil_arabe.jpg') center/cover no-repeat;
   }
 
   .coran-banner h1 {
@@ -678,36 +678,105 @@
 
 
 /* --- CTA FINAL --- */
-.coran-cta {
-  position: relative;
-  width: 100%;
-  height: 400px; /* hauteur native de l'image */
-  margin: var(--nav-h) auto;
-  background: url('https://nassimhamri.github.io/el-moudaris/medias/accueil_coran.jpg') center center / cover no-repeat;
+
+/* ===============================
+   Style commun aux cartes CTA
+================================= */
+.cta-container {
+  width: 100%; 
+  margin: 0 auto;
   display: flex;
-  color: white;
-  overflow: hidden;
-  align-items: flex-end;      /* colle le contenu en bas */
-  justify-content: flex-end;  /* colle le contenu à droite */
-  padding: 100px; 
+  justify-content: center; /* centre le bloc */
 }
 
-.btn-big {
-  font-size: 1.2rem;
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-weight: bold;
+.cta-grids {
+  display: flex;
+  gap: 2.5rem;
+  background-color: var(--primary);
+  border-radius: 12px;
+  width: var(--max-w);
+  max-width: 100%;
+}
+
+/* -- Style commun aux cartes -- */
+.cta-grid {
+  position: relative;
+  flex: 1;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  padding: 20px;
+}
+
+.cta-grid h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+  
+
+/* -- Carte 1 : bons plans -- */
+.cta-inscription {
+  border-bottom-right-radius: 150px;
+}
+
+.cta-inscription::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0000007a;
+  
+}
+
+.cta-inscription .content {
+  position: relative;
+  max-width: 100%;
+}
+
+.cta-faq {
+  background: url('/medias/bannercta.webp');
+}
+
+.cta-faq .content {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 768px) {
+  .cta-grid {
+    height: auto;
+    min-height: 220px;
+    padding: 15px;
+  }
+
+  .cta-grid h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+.btn-primary {
   background: var(--primary);
   color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
   text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  margin-right: 150px;
 }
 
-.btn-big:hover {
-  background: var(--link-hover);
-  transform: scale(1.05);
+.btn-primary:hover {
+  background: #0d6efd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -744,6 +813,4 @@
         margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
     }
 }
-
-
 

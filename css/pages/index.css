@@ -1,7 +1,7 @@
 /* ============================ 
 HERO
 ============================ */
-.hero{position:relative; background:url('https://nassimhamri.github.io/el-moudaris/medias/bannersoleil.webp');background-color:var(--primary); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
+.hero{position:relative; background:url('/medias/bannersoleil.webp');background-color:var(--primary); min-height: 40rem; overflow:hidden;display:grid;place-items:center;text-align:center; border-radius: 0px 0px 50px 50px;}
 
 /* Nuages */
 .cloud{position:absolute;top:8rem;opacity:.9;pointer-events:none}
@@ -27,8 +27,8 @@ HERO
 }
 
 /* ============================== 
-     ICON AUTHORITY
-  ============================== */
+  ICON AUTHORITY
+============================== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -286,8 +286,6 @@ HERO
   text-align: left;
 }
 
-
-
 .card-overlay .btn-light {
   align-self: flex-start;
   background-color: #f5d7aa;
@@ -336,48 +334,30 @@ HERO
 }
 
 /* GUILLEMETS DEBORDANT */
-.quote-open {
+.quote-open, .quote-close {
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: var(--gradient);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(27, 145, 246, 0.3);
-  z-index: 4;
-  font-size: 24px;
+  font-size: 18px;
   color: white;
   font-weight: bold;
-  font-family: serif;
-  pointer-events: none;
-  user-select: none;
-  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(27, 145, 246, 0.2);
+  border: 2px solid white;
+}
+
+.quote-open {
+  top: -10px;
+  left: 15px;
 }
 
 .quote-close {
-  position: absolute;
-  bottom: -15px;
-  right: -15px;
-  width: 50px;
-  height: 50px;
-  background: var(--gradient);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(27, 145, 246, 0.3);
-  z-index: 4;
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-  font-family: serif;
-  pointer-events: none;
-  user-select: none;
-  border: 3px solid white;
+  bottom: -10px;
+  right: 15px;
 }
 
 /* CONTENU INTERIEUR (STYLE CARTE) */
@@ -537,9 +517,182 @@ HERO
   transform: scale(1.2);
 }
 
+/* Tablettes */
+@media (max-width: 1024px) {
+  .testimonial-swiper {
+    padding: 0 30px;
+  }
+  
+  .swiper-button-prev {
+    left: 0;
+  }
+  
+  .swiper-button-next {
+    right: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonial-swiper {
+    padding: 0 15px;
+    margin: 30px 0;
+    overflow: visible;
+  }
+
+  .testimonial-card {
+    /* Simplification du layout pour mobile */
+    padding: 25px 20px 20px 20px;
+    margin: 20px 5px;
+    border-radius: 20px;
+    min-height: 320px;
+  }
+
+  /* Avatar repositionné au centre sur mobile */
+  .testimonial-avatar {
+    position: static;
+    transform: none;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    border: 3px solid white;
+  }
+
+  /* Suppression de la bulle de discussion sur mobile */
+  .testimonial-avatar::after {
+    display: none;
+  }
+
+  /* Guillemets plus petits */
+  .quote-open, .quote-close {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .quote-open {
+    top: -10px;
+    left: 15px;
+  }
+
+  .quote-close {
+    bottom: -10px;
+    right: 15px;
+  }
+
+  /* Contenu centré */
+  .testimonial-content {
+    padding: 20px 15px 15px;
+    text-align: center;
+  }
+
+  /* Texte adapté */
+  .testimonial-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-footer {
+    font-size: 1rem;
+    padding-top: 15px;
+  }
+
+  /* Navigation plus petite */
+  .swiper-button-prev, .swiper-button-next {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .swiper-button-prev {
+    left: -5px;
+  }
+
+  .swiper-button-next {
+    right: -5px;
+  }
+
+  /* Pagination */
+  .swiper-pagination {
+    margin-top: 30px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+  }
+
+  /* Fix pour le centrage des slides */
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto;
+    max-height: none;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 20px 15px 15px 15px;
+    margin: 15px 2px;
+    min-height: 300px;
+  }
+
+  .testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  .quote-open, .quote-close {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .testimonial-content {
+    padding: 15px 12px 12px;
+  }
+
+  .testimonial-title {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .testimonial-footer {
+    font-size: 0.95rem;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+}
+
+/* Fix pour les anciennes règles qui pourraient créer des conflits */
 @media (max-width: 768px) {
   .advantages-graphic {
     grid-template-columns: 1fr;
   }
-
 }
