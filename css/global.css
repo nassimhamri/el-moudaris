@@ -23,7 +23,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
-  background: url("/medias/fond.jpg") center/cover no-repeat fixed;
+  background: url("https://nassimhamri.github.io/el-moudaris/medias/fond.jpg") center/cover no-repeat fixed;
   font-family: 'Poppins', sans-serif; 
   line-height: 1.6; 
   color: var(--dark); 
@@ -425,4 +425,5 @@ Navigation
 
 #footer .footer-bottom a:hover {
   color: #dddddd;
+
 }
