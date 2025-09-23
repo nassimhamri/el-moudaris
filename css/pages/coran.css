@@ -21,7 +21,7 @@
 @media (max-width: 768px) {
   .coran-banner {
     height: 70vh;
-    background: url('/medias/accueil_arabe.jpg') center/cover no-repeat;
+    background: url('https://nassimhamri.github.io/el-moudaris/medias/accueil_arabe.jpg') center/cover no-repeat;
   }
 
   .coran-banner h1 {
@@ -736,7 +736,7 @@
 }
 
 .cta-faq {
-  background: url('/medias/bannercta.webp');
+  background: url('https://nassimhamri.github.io/el-moudaris/medias/bannercta.webp');
 }
 
 .cta-faq .content {
@@ -813,4 +813,5 @@
         margin-left: 20px; /* Ajuste légèrement pour ne pas coller l'icône */
     }
 }
+
 
