@@ -649,14 +649,12 @@ if (document.readyState === 'loading') {
 }
 
 /* PROGRAMME CORAN */
-const circle = document.getElementById('mainCircle');
-const steps = document.querySelectorAll('.step-item');
-
 function drawConnections() {
 
-    const circle = document.querySelector('.circle');
-    const steps = document.querySelectorAll('.step');
-    const timeline = document.querySelector('.timeline');
+  const circle = document.getElementById('mainCircle');  
+  const steps = document.querySelectorAll('.step-item'); 
+  const timeline = document.getElementById('infographic');
+
 
      // Stop si les éléments essentiels ne sont pas présents
   if (!circle || steps.length === 0 || !timeline) return;
