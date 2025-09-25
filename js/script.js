@@ -1,5 +1,3 @@
-
-
 console.log("=== SCRIPT DÉMARRÉ ===");
 
 // Fonction utilitaire pour sélectionner des éléments en sécurité
