@@ -218,11 +218,13 @@ Navigation
 }
 
 /* ——— Dropdown Desktop ——— */
-.dropdown {
+.dropdown,
+.dropdownFooter {
   position: relative;
   display: inline-block;
 }
 
+/*nav-bar*/
 .dropbtn {
   background: none;
   border: none;
@@ -360,6 +362,55 @@ Navigation
 /*  ================================
   FOOTER 
 ===================================*/
+/* --- Dropdown Footer --- */
+.dropdownFooter {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtnFooter {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: none !important; /* empêche les majuscules */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.dropbtnFooter:hover {
+  color: #dddddd;
+}
+
+.dropdownFooter-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdownFooter-content a {
+  color: var(--dark);
+  padding: 10px 15px;
+  display: block;
+}
+
+.dropdownFooter-content a:hover {
+  background: #f5f5f5;
+}
+
+.dropdownFooter:hover .dropdownFooter-content {
+  display: block;
+}
+
+
 #footer {
   background-color: var(--primary);
   color: #ffffff;
@@ -397,12 +448,28 @@ Navigation
   margin-bottom: 0.5rem;
 }
 
-#footer .footer-col a {
+#footer .dropbtnFooter {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: none !important;
+}
+#footer .footer-col a,
+#footer .dropbtnFooter {
   color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
   transition: color 0.2s ease;
+  display: inline-block;
+  text-transform: none;
 }
 
-#footer .footer-col a:hover { color: #dddddd; }
+#footer .footer-col a:hover,
+#footer .dropbtnFooter:hover {
+  color: #dddddd;
+}
+
 
 #footer .footer-col img {
   max-width: 100%;
@@ -425,5 +492,4 @@ Navigation
 
 #footer .footer-bottom a:hover {
   color: #dddddd;
-
 }
