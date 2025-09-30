@@ -2,216 +2,273 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Moudaris – Programmes Coran</title>
+  <title>El Moudaris – Programmes Arabe</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/global.css">
-  <link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/pages/coran.css">
+    <link rel="stylesheet" href="https://nassimhamri.github.io/el-moudaris/css/pages/arabe.css">
   <link rel="icon" href="https://nassimhamri.github.io/el-moudaris/medias/logo/favicon.png" type="image/png">
 </head>
 <body>
 <header>
-  <!-- ============================== NAVIGATION ============================== -->
+
+    <!-- ============================== 
+     BARRE DE NAVIGATION
+      ============================== -->
 <section id="nav-placeholder"></section>
+
 </header>
 
-<!-- ============================== BANNIÈRE ============================== -->
+
+ <!-- ============================== 
+   SECTION HÉRO 
+   ============================== -->
 <section class="program-banner">
     <img src="../medias/accueil_arabe.jpg" alt="Image d'accueil" class="hero-img">
 </section>
 
-<!-- ============================== INTRO ============================== -->
-<section id="intro-Coran" class="primary-section">
+<!-- SECTION DISTINCTIONS -->
+<section class="primary-section" id="distinctions">
+    <div class="container">
+        <div class="title-text fade-in-up">
+          <div class="title-section">
+            <div class="subtitle">Ce qui nous rend uniques</div>
+            <h2 class="main-title">Ce qui nous distingue des autres</h2>
+            <p class="title-description">Une approche méthodologique unique pour l'apprentissage de l'arabe</p>
+          </div>
+        </div>
+
+        <div class="advantages-graphic">
+            <div class="program-card fade-in-up">
+                <div class="icon-highlight">👥</div>
+                <h3 class="program-title">Des cours pensés pour tous</h3>
+                <p class="program-description">Débutants ou avancés, hommes et femmes, francophones désireux d'apprendre l'arabe avec rigueur, clarté et méthode.</p>
+            </div>
+
+            <div class="program-card fade-in-up">
+                <div class="icon-highlight">🎓</div>
+                <h3 class="program-title">Méthodologie unique</h3>
+                <p class="program-description">Notre programme s'appuie sur la méthodologie égyptienne, mondialement reconnue pour son efficacité et sa progression pédagogique.</p>
+            </div>
+
+            <div class="program-card fade-in-up">
+                <div class="icon-highlight">📈</div>
+                <h3 class="program-title">Progression assurée</h3>
+                <p class="program-description">10 niveaux progressifs, permettant à chaque élève d'apprendre à son rythme, depuis les bases jusqu'à une compréhension approfondie.</p>
+            </div>
+
+            <div class="program-card fade-in-up">
+                <div class="icon-highlight">📖</div>
+                <h3 class="program-title">Notre touche perso</h3>
+                <p class="program-description">Des textes axés sur des sujets religieux, l'explication linguistique de sourates et ahadiths pour comprendre ta religion.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION APPRENTISSAGE -->
+<section id="apprentissage" class="primary-section">
+    <div class="container">
+        <div class="title-text fade-in-up">
+          <div class="title-section">
+            <div class="subtitle">Votre parcours</div>
+            <h2 class="main-title">Ce que vous allez apprendre</h2>
+            <p class="title-description">Un programme structuré en 6 étapes essentielles</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+
+            <!-- Connexions dynamiques -->
+            <svg class="connections"></svg>
+
+            <!-- Courbe -->
+            <div class="line">
+            <svg viewBox="0 0 1200 250" preserveAspectRatio="none">
+                <defs>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.25)" />
+                </filter>
+                </defs>
+                <path d="
+                M 0 125
+                Q 100 250, 200 125
+                T 400 125
+                T 600 125
+                T 800 125
+                T 1000 125
+                T 1200 125
+                "
+                stroke="white" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#shadow)" />
+            </svg>
+            </div>
+
+            <!-- Étapes -->
+            <div class="steps">
+      <div class="step step1 top">
+        <div class="step-box">
+          <div class="label">Alphabétisation</div>
+          <div class="content">
+            <p>Découvrez les 28 lettres arabes, leur forme et leurs sons. Apprenez à lire et écrire vos premiers mots.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step2 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Développez votre capacité à comprendre et analyser des textes de plus en plus complexes.</p>
+          </div>
+          <div class="label">Compréhension de textes</div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step3 top">
+        <div class="step-box">
+          <div class="label">Expression orale et écrite</div>
+          <div class="content">
+            <p>Exprimez-vous clairement à l'oral et à l'écrit avec vocabulaire et structures appropriés.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step4 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Maîtrisez les règles grammaticales fondamentales pour construire des phrases correctes.</p>
+          </div>
+          <div class="label">Grammaire <br>النحو</div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step5 top">
+        <div class="step-box">
+          <div class="label">Conjugaison الصرف</div>
+          <div class="content">
+            <p>Apprenez les transformations des verbes selon les temps, personnes et contextes.</p>
+          </div>
+        </div>
+        <span class="tip"></span>
+      </div>
+
+      <div class="step step6 bottom">
+        <div class="step-box">
+          <div class="content">
+            <p>Atteignez l'art de s'exprimer avec beauté, précision et impact rhétorique.</p>
+          </div>
+          <div class="label">Éloquence البلاغة</div>
+        </div>
+        <span class="tip"></span>
+      </div>
+            </div>
+        </div>
+
+        <div class="learning-summary">
+        <div class="summary-card">
+            <h4>🎯 Votre objectif final</h4>
+            <p>Comprendre les textes religieux, sourates et ahadiths dans leur langue originale</p>
+        </div>
+        <div class="summary-card">
+            <h4>⏱️ À votre rythme</h4>
+            <p>10 niveaux progressifs adaptés à votre emploi du temps et capacités</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION AVANTAGES -->
+<section class="primary-section" id="avantages">
   <div class="container fade-in-up">
     <div class="title-text fade-in-up">
       <div class="title-section">
-        <p class="subtitle">Notre suivi</p>
-        <h2 class="main-title">Un accompagnement individuel, sérieux et bienveillant</h2>
-        <p class="title-description">Chaque élève est suivi en <span class="highlight">tête-à-tête</span> par un professeur qualifié. Peu importe ton niveau, tu bénéficies d’un cours sur mesure.</p>
+        <div class="subtitle">Excellence académique</div>
+        <h2 class="main-title">Pourquoi choisir notre institut ?</h2>
+        <p class="title-description">Une approche pédagogique d'excellence pour votre réussite</p>
       </div>
     </div>
-    
+
     <div class="stats-grid">
       <div class="stat fade-in-up">
-        <div class="icon-circle">
-          <img class="icon-stats" src="../medias/icons/checklist.png">
-        </div>
-        <h3 class="highlight">Suivi personnalisé</h3>
-        <p class="program-description">Chaque élève bénéficies d'un accompagnement personnalisé par un professeur qualifié</p>
+          <div class="icon-circle">
+            <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/chapeau.png" >
+          </div>
+          <h3 class="highlight">Enseignants diplômés</h3>
+          <p>Des professeurs expérimentés pour une immersion garantie</p>
       </div>
 
       <div class="stat fade-in-up">
-        <div class="icon-circle">
-          <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/profit.png"> 
-        </div>
-        <h3 class="highlight">Progression à ton rythme</h3>
-        <p class="program-description">Que tu sois débutant, intermédiaire ou avancé, tu bénéficies d’un cours adapté à ton niveau, à ton rythme et à tes objectifs</p>
+      <div class="icon-circle">
+          <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/multi-ecran.png" >
+      </div>
+        <h3 class="highlight">Cours en ligne</h3>
+        <p>Interactifs et accessibles partout dans le monde</p>
       </div>
 
       <div class="stat fade-in-up">
-        <div class="icon-circle">
-          <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/confiance.png"> 
-        </div>
-        <h3 class="highlight">Relation de confiance avec ton professeur</h3>
-        <p class="program-description">Nos enseignants sont à l'écoute et toute l’attention est centrée sur toi</p>
+          <div class="icon-circle">
+            <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/profit.png" >
+          </div>
+          <h3 class="highlight">Suivi personnalisé</h3>
+          <p>Pour chaque élève, avec des évaluations régulières</p>
       </div>
 
-    </div>
-
-    <div class="conteneurBtn">
-      <a href="https://nassimhamri.github.io/el-moudaris/pages/contact.html" class="bouton">Je m'inscris maintenant</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== AVANTAGES ============================== -->
-<section id="avantage-Coran" class="coran-why section-blue">
-  <div class="container fade-in-up">
-    <div class="title-text fade-in-up">
-      <div class="title-section">
-        <p class="subtitle">Nos avantages</p>
-        <h2 class="main-title">Pourquoi choisir nos cours ?</h2>
+      <div class="stat fade-in-up">
+          <div class="icon-circle">
+          <img class="icon-stats" src="https://nassimhamri.github.io/el-moudaris/medias/icons/confiance.png">
+          </div>
+          <h3 class="highlight">Ambiance bienveillante</h3>
+          <p>Adaptée à tous, quel que soit l'âge et le niveau</p>
       </div>
     </div>
-  </div>
-    
-  <div class="container coran-why-flex">
-    <!-- Texte à gauche -->
-    <div class="why-text fade-in-up">
-      <ul class="why-checklist">
-        <li class="fade-in-left"><span class="icon-highlight">⏳</span> Avance à ton rythme, sans pression</li>
-        <li class="fade-in-left"><span class="icon-highlight">📅</span> Des horaires flexibles adaptés à ta vie</li>
-        <li class="fade-in-left"><span class="icon-highlight">✅</span> Corrections personnalisées à chaque séance</li>
-        <li class="fade-in-left"><span class="icon-highlight">💬</span> Encouragement constant et suivi bienveillant</li>
-      </ul>
+
+    <div class="highlight-banner fade-in-up">
+    💡 Une équipe engagée, rigoureuse, qui vise l'excellence
     </div>
-
-    <!-- Illustration à droite -->
-    <div class="why-image fade-in-up">
-      <img src="https://nassimhamri.github.io/el-moudaris/medias/etudiant.avif" alt="Étudiant qui apprend le Coran">
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================== PROGRAMME ============================== -->
-<section class="coran-program section-white">
-  <div class="container">
-    <h2 class="section-title fade-in-up">🌿 Un programme sur mesure</h2>
-    <p class="section-subtitle fade-in-up">
-      Nos cours suivent une progression claire et adaptée à ton rythme. 
-      Chaque étape est pensée pour consolider tes acquis et t’accompagner vers une lecture et une mémorisation solides du Coran.
-    </p>
-
-    <div class="program-timeline">
       
-      <!-- Étape 1 -->
-      <div class="program-step step-1 fade-in-right">
-        <div class="step-icon">📖</div>
-        <div class="step-content">
-          <h3>Lecture fluidifiée</h3>
-          <p>Avec correction en temps réel pour améliorer ta prononciation.</p>
-        </div>
-      </div>
-
-      <!-- Étape 2 -->
-      <div class="program-step step-2 fade-in-right">
-        <div class="step-icon">🎙️</div>
-        <div class="step-content">
-          <h3>Tajwīd appliqué</h3>
-          <p>Les règles mises en pratique progressivement jusqu’à les maîtriser.</p>
-        </div>
-      </div>
-
-      <!-- Étape 3 -->
-      <div class="program-step step-3 fade-in-right">
-        <div class="step-icon">🌟</div>
-        <div class="step-content">
-          <h3>Hifdh</h3>
-          <p>Un plan personnalisé avec des révisions intégrées pour une mémorisation solide.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Encadré final -->
-    <div class="program-highlight">
-      💡 Chaque élève progresse étape par étape, sans sauter d’étape, pour garantir une base solide et durable.
-    </div>
   </div>
 </section>
 
-<!-- ============================== POUR QUI ============================== -->
-<section id="infographic" class="infographic-section coran-forwho">
-  <div class="infographic-container">
-    <div class="center-circle" id="mainCircle">
-        <h2>POUR QUI ?</h2>
-        <p>Découvre si tu te reconnais</p>
-    </div>
-    <div class="steps-container" id="stepsContainer">
-        <div class="step-item fade-in-right">
-            <div class="step-content">
-                <div class="step-icon">🌱</div>
-                <div class="step-text">
-                    <h4>Débutant(e)</h4>
-                    <p>Tu veux commencer le Coran mais tu ne sais pas par où débuter ?</p>
+ <!-- SECTION CTA FINALE -->
+<section class="primary-section" id="cta-finale">
+    <div class="container">
+        <div class="cta-final-card">
+            <div class="cta-content">
+                <h2>Prêt à commencer votre apprentissage ?</h2>
+                <p>Le meilleur moment pour commencer c'est maintenant ! Ne repousse pas à plus tard</p>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <span class="feature-icon">🎁</span>
+                        <span>Cour d'essai sur demande</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">📞</span>
+                        <span>Service inscription réactif</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Tarifs accessibles</span>
+                    </div>
                 </div>
-                <div class="step-number">1</div>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-content fade-in-right">
-                <div class="step-icon">📖</div>
-                <div class="step-text">
-                    <h4>Lecture</h4>
-                    <p>Tu aimerais corriger ta récitation et appliquer les règles du tajwīd.</p>
-                </div>
-                <div class="step-number">2</div>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-content fade-in-right">
-                <div class="step-icon">🧠</div>
-                <div class="step-text">
-                    <h4>Mémerisation</h4>
-                    <p>Tu veux mémoriser avec méthode et constance.</p>
-                </div>
-                <div class="step-number">3</div>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-content fade-in-right">
-                <div class="step-icon">🔥</div>
-                <div class="step-text">
-                    <h4>Motivation</h4>
-                    <p>Tu veux garder la motivation grâce à un suivi régulier.</p>
-                </div>
-                <div class="step-number">4</div>
+                
+                <a href="https://nassimhamri.github.io/el-moudaris/pages/contact.html" class="btn-cta-final">
+                    Commencer maintenant
+                    <span class="btn-arrow">→</span>
+                </a>
+                
+                <small class="cta-note">Sans engagement • Support inclus • Méthode approuvée</small>
             </div>
         </div>
     </div>
-</div>
 </section>
 
-<!-- ============================== CTA ============================== -->
-<section class="primary-section">
-  <div class="cta-container">
-    <div class="cta-grids">
-      <!-- Carte 1 -->
-      <div class="cta-grid cta-inscription" style="background: url('/medias/ctatarifs.webp') center/cover no-repeat;">
-        <div class="content">
-          <a href="https://nassimhamri.github.io/el-moudaris/pages/contact.html" class="btn btn-primary">Je m'inscris aux cours individuels</a>
-        </div>
-      </div>
-
-      <!-- Carte 2 -->
-      <div class="cta-grid cta-faq"></div>
-    </div>
-  </div>
-</section>
-<!-- ============================== FOOTER ============================== -->
 <section id="footer-placeholder"></section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://nassimhamri.github.io/el-moudaris/js/script.js?v=123"></script>
+
 </body>
 </html>
