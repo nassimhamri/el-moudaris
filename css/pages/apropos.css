@@ -53,15 +53,36 @@ HERO
 }
 
 
-.badge {  
-  font-size: 0.95rem;
-  color: wheat;
-  background: #ff6b6b;
-  padding: 0.25rem 0.55rem;
-  border-radius: var(--border-radius);
-  text-transform: lowercase;
+.remarque {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #ffe5e5; /* rouge très clair et doux */
+  border-left: 5px solid #e74c3c; /* accent rouge vif */
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin: 25px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+.remarque .icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #e74c3c;
+}
+
+.remarque h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e74c3c;
+}
+
+.remarque p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 
 .highlight {
   font-weight: bold;
@@ -131,6 +152,7 @@ HERO
     order: initial; /* sur mobile : empilement normal */
   }
 }
+
 
 
 
